@@ -371,5 +371,4 @@ lib/lago_ruby/models/wallets_paginated.rb
 lib/lago_ruby/version.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
-spec/models/charge_properties_graduated_percentage_ranges_inner_spec.rb
 spec/spec_helper.rb
