@@ -1,4 +1,4 @@
-# OpenapiClient::FeeObjectItem
+# LagoAPI::FeeObjectItem
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::FeeObjectItem.new(
+instance = LagoAPI::FeeObjectItem.new(
   type: subscription,
   code: startup,
   name: Startup,

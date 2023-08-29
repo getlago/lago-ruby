@@ -1,4 +1,4 @@
-# OpenapiClient::FeeObject
+# LagoAPI::FeeObject
 
 ## Properties
 
@@ -37,9 +37,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::FeeObject.new(
+instance = LagoAPI::FeeObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_group_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_invoice_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,

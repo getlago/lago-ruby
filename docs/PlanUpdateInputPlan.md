@@ -1,4 +1,4 @@
-# OpenapiClient::PlanUpdateInputPlan
+# LagoAPI::PlanUpdateInputPlan
 
 ## Properties
 
@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | The name of the plan. | [optional] |
 | **code** | **String** | The code of the plan. It serves as a unique identifier associated with a particular plan. The code is typically used for internal or system-level identification purposes, like assigning a subscription, for instance. | [optional] |
-| **interval** | **String** | The interval used for recurring billing. It represents the frequency at which subscription billing occurs. The interval can be one of the following values: &#x60;yearly&#x60;, &#x60;monthly&#x60;, or &#x60;weekly&#x60;. | [optional] |
+| **interval** | **String** | The interval used for recurring billing. It represents the frequency at which subscription billing occurs. The interval can be one of the following values: &#x60;yearly&#x60;, &#x60;quarterly&#x60;, &#x60;monthly&#x60;, or &#x60;weekly&#x60;. | [optional] |
 | **description** | **String** | The description on the plan. | [optional] |
 | **amount_cents** | **Integer** | The base cost of the plan, excluding any applicable taxes, that is billed on a recurring basis. This value is defined at 0 if your plan is a pay-as-you-go plan. | [optional] |
 | **amount_currency** | [**Currency**](Currency.md) |  | [optional] |
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::PlanUpdateInputPlan.new(
+instance = LagoAPI::PlanUpdateInputPlan.new(
   name: Startup,
   code: startup,
   interval: monthly,

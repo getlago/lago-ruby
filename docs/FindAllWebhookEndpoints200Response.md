@@ -1,4 +1,4 @@
-# OpenapiClient::FindAllWebhookEndpoints200Response
+# LagoAPI::FindAllWebhookEndpoints200Response
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::FindAllWebhookEndpoints200Response.new(
+instance = LagoAPI::FindAllWebhookEndpoints200Response.new(
   webhook_endpoints: null,
   meta: null
 )

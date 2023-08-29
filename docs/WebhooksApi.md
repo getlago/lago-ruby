@@ -1,4 +1,4 @@
-# OpenapiClient::WebhooksApi
+# LagoAPI::WebhooksApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -19,20 +19,20 @@ This endpoint is used to retrieve the public key used to verify the webhooks sig
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WebhooksApi.new
+api_instance = LagoAPI::WebhooksApi.new
 
 begin
   # Retrieve webhook public key
   result = api_instance.fetch_public_key
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhooksApi->fetch_public_key: #{e}"
 end
 ```
@@ -50,7 +50,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => String
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhooksApi->fetch_public_key_with_http_info: #{e}"
 end
 ```

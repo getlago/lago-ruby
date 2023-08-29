@@ -1,4 +1,4 @@
-# OpenapiClient::EventBatchInputEventProperties
+# LagoAPI::EventBatchInputEventProperties
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::EventBatchInputEventProperties.new(
+instance = LagoAPI::EventBatchInputEventProperties.new(
   operation_type: null
 )
 ```

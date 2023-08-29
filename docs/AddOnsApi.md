@@ -1,4 +1,4 @@
-# OpenapiClient::AddOnsApi
+# LagoAPI::AddOnsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -24,21 +24,21 @@ Apply an add-on to a customer
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AddOnsApi.new
-applied_add_on_input = OpenapiClient::AppliedAddOnInput.new({applied_add_on: OpenapiClient::AppliedAddOnInputAppliedAddOn.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', add_on_code: 'setup_fee'})}) # AppliedAddOnInput | Apply add-on payload
+api_instance = LagoAPI::AddOnsApi.new
+applied_add_on_input = LagoAPI::AppliedAddOnInput.new({applied_add_on: LagoAPI::AppliedAddOnInputAppliedAddOn.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', add_on_code: 'setup_fee'})}) # AppliedAddOnInput | Apply add-on payload
 
 begin
   # Apply an add-on to a customer
   result = api_instance.apply_add_on(applied_add_on_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->apply_add_on: #{e}"
 end
 ```
@@ -56,7 +56,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AppliedAddOn>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->apply_add_on_with_http_info: #{e}"
 end
 ```
@@ -93,21 +93,21 @@ This endpoint is used to create an add-on that can be then attached to a one-off
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AddOnsApi.new
-add_on_create_input = OpenapiClient::AddOnCreateInput.new({add_on: OpenapiClient::AddOnCreateInputAddOn.new({name: 'Setup Fee', code: 'setup_fee', amount_cents: 50000, amount_currency: OpenapiClient::Currency::AED})}) # AddOnCreateInput | Add-on payload
+api_instance = LagoAPI::AddOnsApi.new
+add_on_create_input = LagoAPI::AddOnCreateInput.new({add_on: LagoAPI::AddOnCreateInputAddOn.new({name: 'Setup Fee', code: 'setup_fee', amount_cents: 50000, amount_currency: LagoAPI::Currency::AED})}) # AddOnCreateInput | Add-on payload
 
 begin
   # Create an add-on
   result = api_instance.create_add_on(add_on_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->create_add_on: #{e}"
 end
 ```
@@ -125,7 +125,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AddOn>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->create_add_on_with_http_info: #{e}"
 end
 ```
@@ -162,21 +162,21 @@ This endpoint is used to delete an existing add-on.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AddOnsApi.new
+api_instance = LagoAPI::AddOnsApi.new
 code = 'setup_fee' # String | Unique code used to identify the add-on.
 
 begin
   # Delete an add-on
   result = api_instance.destroy_add_on(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->destroy_add_on: #{e}"
 end
 ```
@@ -194,7 +194,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AddOn>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->destroy_add_on_with_http_info: #{e}"
 end
 ```
@@ -231,21 +231,21 @@ This endpoint is used to retrieve a specific add-on.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AddOnsApi.new
+api_instance = LagoAPI::AddOnsApi.new
 code = 'setup_fee' # String | Unique code used to identify the add-on.
 
 begin
   # Retrieve an add-on
   result = api_instance.find_add_on(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->find_add_on: #{e}"
 end
 ```
@@ -263,7 +263,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AddOn>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->find_add_on_with_http_info: #{e}"
 end
 ```
@@ -300,14 +300,14 @@ This endpoint is used to list all existing add-ons.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AddOnsApi.new
+api_instance = LagoAPI::AddOnsApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20 # Integer | Number of records per page.
@@ -317,7 +317,7 @@ begin
   # List all add-ons
   result = api_instance.find_all_add_ons(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->find_all_add_ons: #{e}"
 end
 ```
@@ -335,7 +335,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AddOnsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->find_all_add_ons_with_http_info: #{e}"
 end
 ```
@@ -373,22 +373,22 @@ This endpoint is used to update an existing add-on.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::AddOnsApi.new
+api_instance = LagoAPI::AddOnsApi.new
 code = 'setup_fee' # String | Unique code used to identify the add-on.
-add_on_update_input = OpenapiClient::AddOnUpdateInput.new({add_on: OpenapiClient::AddOnBaseInput.new}) # AddOnUpdateInput | Add-on payload
+add_on_update_input = LagoAPI::AddOnUpdateInput.new({add_on: LagoAPI::AddOnBaseInput.new}) # AddOnUpdateInput | Add-on payload
 
 begin
   # Update an add-on
   result = api_instance.update_add_on(code, add_on_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->update_add_on: #{e}"
 end
 ```
@@ -406,7 +406,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AddOn>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling AddOnsApi->update_add_on_with_http_info: #{e}"
 end
 ```

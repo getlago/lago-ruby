@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationObject
+# LagoAPI::OrganizationObject
 
 ## Properties
 
@@ -27,9 +27,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::OrganizationObject.new(
+instance = LagoAPI::OrganizationObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   name: Name1,
   created_at: 2022-05-02T13:04:09Z,

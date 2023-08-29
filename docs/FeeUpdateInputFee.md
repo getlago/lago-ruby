@@ -1,4 +1,4 @@
-# OpenapiClient::FeeUpdateInputFee
+# LagoAPI::FeeUpdateInputFee
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::FeeUpdateInputFee.new(
+instance = LagoAPI::FeeUpdateInputFee.new(
   payment_status: succeeded
 )
 ```

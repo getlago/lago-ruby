@@ -1,4 +1,4 @@
-# OpenapiClient::Event
+# LagoAPI::Event
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::Event.new(
+instance = LagoAPI::Event.new(
   event: null
 )
 ```

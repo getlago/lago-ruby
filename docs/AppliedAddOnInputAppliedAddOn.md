@@ -1,4 +1,4 @@
-# OpenapiClient::AppliedAddOnInputAppliedAddOn
+# LagoAPI::AppliedAddOnInputAppliedAddOn
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::AppliedAddOnInputAppliedAddOn.new(
+instance = LagoAPI::AppliedAddOnInputAppliedAddOn.new(
   external_customer_id: 5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba,
   add_on_code: setup_fee,
   amount_cents: 50000,

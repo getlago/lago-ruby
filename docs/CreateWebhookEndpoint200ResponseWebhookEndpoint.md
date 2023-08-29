@@ -1,4 +1,4 @@
-# OpenapiClient::CreateWebhookEndpoint200ResponseWebhookEndpoint
+# LagoAPI::CreateWebhookEndpoint200ResponseWebhookEndpoint
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CreateWebhookEndpoint200ResponseWebhookEndpoint.new(
+instance = LagoAPI::CreateWebhookEndpoint200ResponseWebhookEndpoint.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_organization_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   webhook_url: Prepaid,

@@ -1,4 +1,4 @@
-# OpenapiClient::TaxCreateInput
+# LagoAPI::TaxCreateInput
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::TaxCreateInput.new(
+instance = LagoAPI::TaxCreateInput.new(
   tax: null
 )
 ```

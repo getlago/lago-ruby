@@ -1,4 +1,4 @@
-# OpenapiClient::PlansApi
+# LagoAPI::PlansApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -23,21 +23,21 @@ This endpoint creates a plan with subscription and usage-based charges. It suppo
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PlansApi.new
-plan_create_input = OpenapiClient::PlanCreateInput.new({plan: OpenapiClient::PlanCreateInputPlan.new}) # PlanCreateInput | Plan payload
+api_instance = LagoAPI::PlansApi.new
+plan_create_input = LagoAPI::PlanCreateInput.new({plan: LagoAPI::PlanCreateInputPlan.new}) # PlanCreateInput | Plan payload
 
 begin
   # Create a plan
   result = api_instance.create_plan(plan_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->create_plan: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Plan>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->create_plan_with_http_info: #{e}"
 end
 ```
@@ -92,21 +92,21 @@ This endpoint deletes a specific plan. Note that this plan could be associated w
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PlansApi.new
+api_instance = LagoAPI::PlansApi.new
 code = 'startup' # String | The code of the plan. It serves as a unique identifier associated with a particular plan. The code is typically used for internal or system-level identification purposes, like assigning a subscription, for instance.
 
 begin
   # Delete a plan
   result = api_instance.destroy_plan(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->destroy_plan: #{e}"
 end
 ```
@@ -124,7 +124,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Plan>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->destroy_plan_with_http_info: #{e}"
 end
 ```
@@ -161,14 +161,14 @@ This endpoint retrieves all existing plans.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PlansApi.new
+api_instance = LagoAPI::PlansApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20 # Integer | Number of records per page.
@@ -178,7 +178,7 @@ begin
   # List all plans
   result = api_instance.find_all_plans(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->find_all_plans: #{e}"
 end
 ```
@@ -196,7 +196,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <PlansPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->find_all_plans_with_http_info: #{e}"
 end
 ```
@@ -234,21 +234,21 @@ This endpoint retrieves a specific plan.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PlansApi.new
+api_instance = LagoAPI::PlansApi.new
 code = 'startup' # String | The code of the plan. It serves as a unique identifier associated with a particular plan. The code is typically used for internal or system-level identification purposes, like assigning a subscription, for instance.
 
 begin
   # Retrieve a plan
   result = api_instance.find_plan(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->find_plan: #{e}"
 end
 ```
@@ -266,7 +266,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Plan>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->find_plan_with_http_info: #{e}"
 end
 ```
@@ -303,22 +303,22 @@ This endpoint updates a specific plan with subscription and usage-based charges.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::PlansApi.new
+api_instance = LagoAPI::PlansApi.new
 code = 'startup' # String | The code of the plan. It serves as a unique identifier associated with a particular plan. The code is typically used for internal or system-level identification purposes, like assigning a subscription, for instance.
-plan_update_input = OpenapiClient::PlanUpdateInput.new({plan: OpenapiClient::PlanUpdateInputPlan.new}) # PlanUpdateInput | Plan payload
+plan_update_input = LagoAPI::PlanUpdateInput.new({plan: LagoAPI::PlanUpdateInputPlan.new}) # PlanUpdateInput | Plan payload
 
 begin
   # Update a plan
   result = api_instance.update_plan(code, plan_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->update_plan: #{e}"
 end
 ```
@@ -336,7 +336,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Plan>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling PlansApi->update_plan_with_http_info: #{e}"
 end
 ```

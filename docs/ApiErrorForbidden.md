@@ -1,4 +1,4 @@
-# OpenapiClient::ApiErrorForbidden
+# LagoAPI::ApiErrorForbidden
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ApiErrorForbidden.new(
+instance = LagoAPI::ApiErrorForbidden.new(
   status: 403,
   error: Forbidden,
   code: feature_unavailable

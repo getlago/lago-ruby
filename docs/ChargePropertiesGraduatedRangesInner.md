@@ -1,4 +1,4 @@
-# OpenapiClient::ChargePropertiesGraduatedRangesInner
+# LagoAPI::ChargePropertiesGraduatedRangesInner
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ChargePropertiesGraduatedRangesInner.new(
+instance = LagoAPI::ChargePropertiesGraduatedRangesInner.new(
   from_value: 0,
   to_value: 10,
   flat_amount: 10,

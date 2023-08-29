@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationUpdateInput
+# LagoAPI::OrganizationUpdateInput
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::OrganizationUpdateInput.new(
+instance = LagoAPI::OrganizationUpdateInput.new(
   organization: null
 )
 ```

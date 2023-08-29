@@ -1,4 +1,4 @@
-# OpenapiClient::CreditNoteAppliedTaxObject
+# LagoAPI::CreditNoteAppliedTaxObject
 
 ## Properties
 
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CreditNoteAppliedTaxObject.new(
+instance = LagoAPI::CreditNoteAppliedTaxObject.new(
   lago_credit_note_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   base_amount_cents: 100,
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,

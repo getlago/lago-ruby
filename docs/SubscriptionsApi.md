@@ -1,4 +1,4 @@
-# OpenapiClient::SubscriptionsApi
+# LagoAPI::SubscriptionsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -22,21 +22,21 @@ This endpoint assigns a plan to a customer, creating or modifying a subscription
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SubscriptionsApi.new
-subscription_create_input = OpenapiClient::SubscriptionCreateInput.new({subscription: OpenapiClient::SubscriptionCreateInputSubscription.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', plan_code: 'premium', external_id: 'my_sub_1234567890'})}) # SubscriptionCreateInput | Subscription payload
+api_instance = LagoAPI::SubscriptionsApi.new
+subscription_create_input = LagoAPI::SubscriptionCreateInput.new({subscription: LagoAPI::SubscriptionCreateInputSubscription.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', plan_code: 'premium', external_id: 'my_sub_1234567890'})}) # SubscriptionCreateInput | Subscription payload
 
 begin
   # Assign a plan to a customer
   result = api_instance.create_subscription(subscription_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->create_subscription: #{e}"
 end
 ```
@@ -54,7 +54,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Subscription>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->create_subscription_with_http_info: #{e}"
 end
 ```
@@ -91,14 +91,14 @@ This endpoint allows you to terminate a subscription.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SubscriptionsApi.new
+api_instance = LagoAPI::SubscriptionsApi.new
 external_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | External ID of the existing subscription
 opts = {
   status: 'pending' # String | If the field is not defined, Lago will terminate only `active` subscriptions. However, if you wish to cancel a `pending` subscription, please ensure that you include `status=pending` in your request.
@@ -108,7 +108,7 @@ begin
   # Terminate a subscription
   result = api_instance.destroy_subscription(external_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->destroy_subscription: #{e}"
 end
 ```
@@ -126,7 +126,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Subscription>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->destroy_subscription_with_http_info: #{e}"
 end
 ```
@@ -164,14 +164,14 @@ This endpoint retrieves all active subscriptions.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SubscriptionsApi.new
+api_instance = LagoAPI::SubscriptionsApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20, # Integer | Number of records per page.
@@ -184,7 +184,7 @@ begin
   # List all subscriptions
   result = api_instance.find_all_subscriptions(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->find_all_subscriptions: #{e}"
 end
 ```
@@ -202,7 +202,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <SubscriptionsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->find_all_subscriptions_with_http_info: #{e}"
 end
 ```
@@ -243,22 +243,22 @@ This endpoint allows you to update a subscription.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::SubscriptionsApi.new
+api_instance = LagoAPI::SubscriptionsApi.new
 external_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | External ID of the existing subscription
-subscription_update_input = OpenapiClient::SubscriptionUpdateInput.new({subscription: OpenapiClient::SubscriptionUpdateInputSubscription.new}) # SubscriptionUpdateInput | Update an existing subscription
+subscription_update_input = LagoAPI::SubscriptionUpdateInput.new({subscription: LagoAPI::SubscriptionUpdateInputSubscription.new}) # SubscriptionUpdateInput | Update an existing subscription
 
 begin
   # Update a subscription
   result = api_instance.update_subscription(external_id, subscription_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->update_subscription: #{e}"
 end
 ```
@@ -276,7 +276,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Subscription>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling SubscriptionsApi->update_subscription_with_http_info: #{e}"
 end
 ```

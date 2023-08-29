@@ -1,4 +1,4 @@
-# OpenapiClient::WalletTransactionObject
+# LagoAPI::WalletTransactionObject
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::WalletTransactionObject.new(
+instance = LagoAPI::WalletTransactionObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_wallet_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   status: settled,

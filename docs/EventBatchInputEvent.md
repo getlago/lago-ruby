@@ -1,4 +1,4 @@
-# OpenapiClient::EventBatchInputEvent
+# LagoAPI::EventBatchInputEvent
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::EventBatchInputEvent.new(
+instance = LagoAPI::EventBatchInputEvent.new(
   transaction_id: transaction_1234567890,
   external_customer_id: 5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba,
   external_subscription_ids: [&quot;sub_1234567890&quot;,&quot;sub_0987654321&quot;],

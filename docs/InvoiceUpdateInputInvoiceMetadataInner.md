@@ -1,4 +1,4 @@
-# OpenapiClient::InvoiceUpdateInputInvoiceMetadataInner
+# LagoAPI::InvoiceUpdateInputInvoiceMetadataInner
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::InvoiceUpdateInputInvoiceMetadataInner.new(
+instance = LagoAPI::InvoiceUpdateInputInvoiceMetadataInner.new(
   id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   key: digital_ref_id,
   value: INV-0123456-98765

@@ -1,4 +1,4 @@
-# OpenapiClient::TaxesApi
+# LagoAPI::TaxesApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -23,21 +23,21 @@ This endpoint creates a new tax representing a customizable tax rate applicable 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::TaxesApi.new
-tax_create_input = OpenapiClient::TaxCreateInput.new({tax: OpenapiClient::TaxCreateInputTax.new({name: 'TVA', code: 'french_standard_vat', rate: '20.0'})}) # TaxCreateInput | Tax creation payload
+api_instance = LagoAPI::TaxesApi.new
+tax_create_input = LagoAPI::TaxCreateInput.new({tax: LagoAPI::TaxCreateInputTax.new({name: 'TVA', code: 'french_standard_vat', rate: '20.0'})}) # TaxCreateInput | Tax creation payload
 
 begin
   # Create a tax
   result = api_instance.create_tax(tax_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->create_tax: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Tax>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->create_tax_with_http_info: #{e}"
 end
 ```
@@ -92,21 +92,21 @@ This endpoint is used to delete a tax.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::TaxesApi.new
+api_instance = LagoAPI::TaxesApi.new
 code = 'french_standard_vat' # String | The code of the tax. It serves as a unique identifier associated with a particular tax. The code is typically used for internal or system-level identification purposes.
 
 begin
   # Delete a tax
   result = api_instance.destroy_tax(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->destroy_tax: #{e}"
 end
 ```
@@ -124,7 +124,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Tax>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->destroy_tax_with_http_info: #{e}"
 end
 ```
@@ -161,14 +161,14 @@ This endpoint retrieves all existing taxes representing a customizable tax rate 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::TaxesApi.new
+api_instance = LagoAPI::TaxesApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20 # Integer | Number of records per page.
@@ -178,7 +178,7 @@ begin
   # List all taxes
   result = api_instance.find_all_taxes(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->find_all_taxes: #{e}"
 end
 ```
@@ -196,7 +196,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <TaxesPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->find_all_taxes_with_http_info: #{e}"
 end
 ```
@@ -234,21 +234,21 @@ This endpoint retrieves an existing tax representing a customizable tax rate app
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::TaxesApi.new
+api_instance = LagoAPI::TaxesApi.new
 code = 'french_standard_vat' # String | The code of the tax. It serves as a unique identifier associated with a particular tax. The code is typically used for internal or system-level identification purposes.
 
 begin
   # Retrieve a Tax
   result = api_instance.find_tax(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->find_tax: #{e}"
 end
 ```
@@ -266,7 +266,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Tax>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->find_tax_with_http_info: #{e}"
 end
 ```
@@ -303,22 +303,22 @@ This endpoint updates an existing tax representing a customizable tax rate appli
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::TaxesApi.new
+api_instance = LagoAPI::TaxesApi.new
 code = 'french_standard_vat' # String | The code of the tax. It serves as a unique identifier associated with a particular tax. The code is typically used for internal or system-level identification purposes.
-tax_update_input = OpenapiClient::TaxUpdateInput.new({tax: OpenapiClient::TaxBaseInput.new}) # TaxUpdateInput | Tax update payload
+tax_update_input = LagoAPI::TaxUpdateInput.new({tax: LagoAPI::TaxBaseInput.new}) # TaxUpdateInput | Tax update payload
 
 begin
   # Update a tax
   result = api_instance.update_tax(code, tax_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->update_tax: #{e}"
 end
 ```
@@ -336,7 +336,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Tax>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling TaxesApi->update_tax_with_http_info: #{e}"
 end
 ```

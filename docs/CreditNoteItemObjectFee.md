@@ -1,4 +1,4 @@
-# OpenapiClient::CreditNoteItemObjectFee
+# LagoAPI::CreditNoteItemObjectFee
 
 ## Properties
 
@@ -37,9 +37,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CreditNoteItemObjectFee.new(
+instance = LagoAPI::CreditNoteItemObjectFee.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_group_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_invoice_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,

@@ -1,4 +1,4 @@
-# OpenapiClient::CouponBaseInputAppliesTo
+# LagoAPI::CouponBaseInputAppliesTo
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CouponBaseInputAppliesTo.new(
+instance = LagoAPI::CouponBaseInputAppliesTo.new(
   plan_codes: [&quot;startup_plan&quot;],
   billable_metric_codes: []
 )

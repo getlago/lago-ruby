@@ -1,4 +1,4 @@
-# OpenapiClient::WalletObject
+# LagoAPI::WalletObject
 
 ## Properties
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::WalletObject.new(
+instance = LagoAPI::WalletObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_customer_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   external_customer_id: hooli_1234,

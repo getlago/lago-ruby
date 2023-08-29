@@ -1,4 +1,4 @@
-# OpenapiClient::ApiErrorNotFound
+# LagoAPI::ApiErrorNotFound
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ApiErrorNotFound.new(
+instance = LagoAPI::ApiErrorNotFound.new(
   status: 404,
   error: Not Found,
   code: object_not_found

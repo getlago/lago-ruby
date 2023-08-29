@@ -1,4 +1,4 @@
-# OpenapiClient::Country
+# LagoAPI::Country
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::Country.new()
+instance = LagoAPI::Country.new()
 ```
 

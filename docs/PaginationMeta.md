@@ -1,4 +1,4 @@
-# OpenapiClient::PaginationMeta
+# LagoAPI::PaginationMeta
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::PaginationMeta.new(
+instance = LagoAPI::PaginationMeta.new(
   current_page: 2,
   next_page: 3,
   prev_page: 1,

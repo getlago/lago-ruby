@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationUpdateInputOrganization
+# LagoAPI::OrganizationUpdateInputOrganization
 
 ## Properties
 
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::OrganizationUpdateInputOrganization.new(
+instance = LagoAPI::OrganizationUpdateInputOrganization.new(
   webhook_url: https://webhook.brex.com,
   country: null,
   address_line1: 100 Brex Street,

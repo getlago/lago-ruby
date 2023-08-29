@@ -1,4 +1,4 @@
-# OpenapiClient::Timezone
+# LagoAPI::Timezone
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::Timezone.new()
+instance = LagoAPI::Timezone.new()
 ```
 

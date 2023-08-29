@@ -1,4 +1,4 @@
-# OpenapiClient::CreateWebhookEndpointRequestWebhookEndpoint
+# LagoAPI::CreateWebhookEndpointRequestWebhookEndpoint
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CreateWebhookEndpointRequestWebhookEndpoint.new(
+instance = LagoAPI::CreateWebhookEndpointRequestWebhookEndpoint.new(
   webhook_url: https://foo.bar,
   signature_algo: hmac
 )

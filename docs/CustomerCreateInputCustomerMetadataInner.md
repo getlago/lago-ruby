@@ -1,4 +1,4 @@
-# OpenapiClient::CustomerCreateInputCustomerMetadataInner
+# LagoAPI::CustomerCreateInputCustomerMetadataInner
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CustomerCreateInputCustomerMetadataInner.new(
+instance = LagoAPI::CustomerCreateInputCustomerMetadataInner.new(
   id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   key: Purchase Order,
   value: 123456789,

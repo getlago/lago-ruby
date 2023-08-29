@@ -1,4 +1,4 @@
-# OpenapiClient::BillableMetricsApi
+# LagoAPI::BillableMetricsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -24,21 +24,21 @@ This endpoint creates a new billable metric representing a pricing component of 
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::BillableMetricsApi.new
-billable_metric_create_input = OpenapiClient::BillableMetricCreateInput.new({billable_metric: OpenapiClient::BillableMetricCreateInputBillableMetric.new({name: 'Storage', code: 'storage', aggregation_type: 'count_agg'})}) # BillableMetricCreateInput | Billable metric payload
+api_instance = LagoAPI::BillableMetricsApi.new
+billable_metric_create_input = LagoAPI::BillableMetricCreateInput.new({billable_metric: LagoAPI::BillableMetricCreateInputBillableMetric.new({name: 'Storage', code: 'storage', aggregation_type: 'count_agg'})}) # BillableMetricCreateInput | Billable metric payload
 
 begin
   # Create a billable metric
   result = api_instance.create_billable_metric(billable_metric_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->create_billable_metric: #{e}"
 end
 ```
@@ -56,7 +56,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BillableMetric>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->create_billable_metric_with_http_info: #{e}"
 end
 ```
@@ -93,21 +93,21 @@ This endpoint deletes an existing billable metric representing a pricing compone
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::BillableMetricsApi.new
+api_instance = LagoAPI::BillableMetricsApi.new
 code = 'storage' # String | Code of the existing billable metric.
 
 begin
   # Delete a billable metric
   result = api_instance.destroy_billable_metric(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->destroy_billable_metric: #{e}"
 end
 ```
@@ -125,7 +125,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BillableMetric>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->destroy_billable_metric_with_http_info: #{e}"
 end
 ```
@@ -162,14 +162,14 @@ This endpoint retrieves all groups for a billable metric.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::BillableMetricsApi.new
+api_instance = LagoAPI::BillableMetricsApi.new
 code = 'example_code' # String | Code of the existing billable metric.
 opts = {
   page: 1, # Integer | Page number.
@@ -180,7 +180,7 @@ begin
   # Find a billable metric's groups
   result = api_instance.find_all_billable_metric_groups(code, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->find_all_billable_metric_groups: #{e}"
 end
 ```
@@ -198,7 +198,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GroupsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->find_all_billable_metric_groups_with_http_info: #{e}"
 end
 ```
@@ -237,14 +237,14 @@ This endpoint retrieves all existing billable metrics that represent pricing com
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::BillableMetricsApi.new
+api_instance = LagoAPI::BillableMetricsApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20 # Integer | Number of records per page.
@@ -254,7 +254,7 @@ begin
   # List all billable metrics
   result = api_instance.find_all_billable_metrics(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->find_all_billable_metrics: #{e}"
 end
 ```
@@ -272,7 +272,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BillableMetricsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->find_all_billable_metrics_with_http_info: #{e}"
 end
 ```
@@ -310,21 +310,21 @@ This endpoint retrieves an existing billable metric that represents a pricing co
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::BillableMetricsApi.new
+api_instance = LagoAPI::BillableMetricsApi.new
 code = 'storage' # String | Code of the existing billable metric.
 
 begin
   # Retrieve a billable metric
   result = api_instance.find_billable_metric(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->find_billable_metric: #{e}"
 end
 ```
@@ -342,7 +342,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BillableMetric>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->find_billable_metric_with_http_info: #{e}"
 end
 ```
@@ -379,22 +379,22 @@ This endpoint updates an existing billable metric representing a pricing compone
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::BillableMetricsApi.new
+api_instance = LagoAPI::BillableMetricsApi.new
 code = 'storage' # String | Code of the existing billable metric.
-billable_metric_update_input = OpenapiClient::BillableMetricUpdateInput.new({billable_metric: OpenapiClient::BillableMetricBaseInput.new}) # BillableMetricUpdateInput | Billable metric payload
+billable_metric_update_input = LagoAPI::BillableMetricUpdateInput.new({billable_metric: LagoAPI::BillableMetricBaseInput.new}) # BillableMetricUpdateInput | Billable metric payload
 
 begin
   # Update a billable metric
   result = api_instance.update_billable_metric(code, billable_metric_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->update_billable_metric: #{e}"
 end
 ```
@@ -412,7 +412,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <BillableMetric>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling BillableMetricsApi->update_billable_metric_with_http_info: #{e}"
 end
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::ApiErrorUnauthorized
+# LagoAPI::ApiErrorUnauthorized
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ApiErrorUnauthorized.new(
+instance = LagoAPI::ApiErrorUnauthorized.new(
   status: 401,
   error: Unauthorized
 )

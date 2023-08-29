@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationBillingConfiguration
+# LagoAPI::OrganizationBillingConfiguration
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::OrganizationBillingConfiguration.new(
+instance = LagoAPI::OrganizationBillingConfiguration.new(
   invoice_footer: This is my customer footer,
   invoice_grace_period: 3,
   document_locale: en

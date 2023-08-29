@@ -1,4 +1,4 @@
-# OpenapiClient::EventEstimateFeesInput
+# LagoAPI::EventEstimateFeesInput
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::EventEstimateFeesInput.new(
+instance = LagoAPI::EventEstimateFeesInput.new(
   event: null
 )
 ```

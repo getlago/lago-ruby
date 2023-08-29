@@ -1,4 +1,4 @@
-# OpenapiClient::WebhookEndpointsApi
+# LagoAPI::WebhookEndpointsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -23,21 +23,21 @@ This endpoint is used to create a webhook endpoint.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WebhookEndpointsApi.new
-create_webhook_endpoint_request = OpenapiClient::CreateWebhookEndpointRequest.new # CreateWebhookEndpointRequest | Webhook Endpoint payload
+api_instance = LagoAPI::WebhookEndpointsApi.new
+create_webhook_endpoint_request = LagoAPI::CreateWebhookEndpointRequest.new # CreateWebhookEndpointRequest | Webhook Endpoint payload
 
 begin
   # Create a webhook_endpoint
   result = api_instance.create_webhook_endpoint(create_webhook_endpoint_request)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->create_webhook_endpoint: #{e}"
 end
 ```
@@ -55,7 +55,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreateWebhookEndpoint200Response>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->create_webhook_endpoint_with_http_info: #{e}"
 end
 ```
@@ -92,21 +92,21 @@ This endpoint is used to delete an existing webhook endpoint.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WebhookEndpointsApi.new
+api_instance = LagoAPI::WebhookEndpointsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the webhook endpoint within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the webhook endpoint's record within the Lago system.
 
 begin
   # Delete a webhook endpoint
   result = api_instance.destroy_webhook_endpoint(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->destroy_webhook_endpoint: #{e}"
 end
 ```
@@ -124,7 +124,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->destroy_webhook_endpoint_with_http_info: #{e}"
 end
 ```
@@ -161,14 +161,14 @@ This endpoint is used to list all webhook endpoints.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WebhookEndpointsApi.new
+api_instance = LagoAPI::WebhookEndpointsApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20 # Integer | Number of records per page.
@@ -178,7 +178,7 @@ begin
   # List all webhook endpoints
   result = api_instance.find_all_webhook_endpoints(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->find_all_webhook_endpoints: #{e}"
 end
 ```
@@ -196,7 +196,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FindAllWebhookEndpoints200Response>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->find_all_webhook_endpoints_with_http_info: #{e}"
 end
 ```
@@ -234,21 +234,21 @@ This endpoint is used to retrieve an existing webhook endpoint.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WebhookEndpointsApi.new
+api_instance = LagoAPI::WebhookEndpointsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the webhook endpoint within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the webhook endpoint's record within the Lago system.
 
 begin
   # Retrieve a webhook endpoint
   result = api_instance.find_webhook_endpoint(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->find_webhook_endpoint: #{e}"
 end
 ```
@@ -266,7 +266,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->find_webhook_endpoint_with_http_info: #{e}"
 end
 ```
@@ -303,22 +303,22 @@ This endpoint is used to update an existing webhook endpoint.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WebhookEndpointsApi.new
+api_instance = LagoAPI::WebhookEndpointsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the webhook endpoint within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the webhook endpoint's record within the Lago system.
-create_webhook_endpoint_request = OpenapiClient::CreateWebhookEndpointRequest.new # CreateWebhookEndpointRequest | Webhook Endpoint update payload
+create_webhook_endpoint_request = LagoAPI::CreateWebhookEndpointRequest.new # CreateWebhookEndpointRequest | Webhook Endpoint update payload
 
 begin
   # Update a webhook endpoint
   result = api_instance.update_webhook_endpoint(lago_id, create_webhook_endpoint_request)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->update_webhook_endpoint: #{e}"
 end
 ```
@@ -336,7 +336,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Object
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->update_webhook_endpoint_with_http_info: #{e}"
 end
 ```

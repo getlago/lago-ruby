@@ -1,4 +1,4 @@
-# OpenapiClient::CreditObjectInvoice
+# LagoAPI::CreditObjectInvoice
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CreditObjectInvoice.new(
+instance = LagoAPI::CreditObjectInvoice.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   payment_status: succeeded
 )

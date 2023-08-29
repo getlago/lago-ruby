@@ -1,4 +1,4 @@
-# OpenapiClient::BillableMetricGroupValuesInner
+# LagoAPI::BillableMetricGroupValuesInner
 
 ## Class instance methods
 
@@ -9,9 +9,9 @@ Returns the list of classes defined in oneOf.
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-OpenapiClient::BillableMetricGroupValuesInner.openapi_one_of
+LagoAPI::BillableMetricGroupValuesInner.openapi_one_of
 # =>
 # [
 #   :'BillableMetricGroupValuesInnerOneOf',
@@ -26,12 +26,12 @@ Find the appropriate object from the `openapi_one_of` list and casts the data in
 #### Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-OpenapiClient::BillableMetricGroupValuesInner.build(data)
+LagoAPI::BillableMetricGroupValuesInner.build(data)
 # => #<BillableMetricGroupValuesInnerOneOf:0x00007fdd4aab02a0>
 
-OpenapiClient::BillableMetricGroupValuesInner.build(data_that_doesnt_match)
+LagoAPI::BillableMetricGroupValuesInner.build(data_that_doesnt_match)
 # => nil
 ```
 

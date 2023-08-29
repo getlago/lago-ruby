@@ -1,4 +1,4 @@
-# OpenapiClient::AddOnObject
+# LagoAPI::AddOnObject
 
 ## Properties
 
@@ -11,20 +11,22 @@
 | **amount_currency** | [**Currency**](Currency.md) |  |  |
 | **description** | **String** | The description of the add-on. | [optional] |
 | **created_at** | **Time** | The date and time when the add-on was created. It is expressed in UTC format according to the ISO 8601 datetime standard. This field provides the timestamp for the exact moment when the add-on was initially created. |  |
+| **taxes** | [**Array&lt;TaxObject&gt;**](TaxObject.md) | All taxes applied to the add-on. | [optional] |
 
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::AddOnObject.new(
+instance = LagoAPI::AddOnObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   name: Setup Fee,
   code: setup_fee,
   amount_cents: 50000,
   amount_currency: null,
   description: Implementation fee for new customers.,
-  created_at: 2022-04-29T08:59:51Z
+  created_at: 2022-04-29T08:59:51Z,
+  taxes: null
 )
 ```
 

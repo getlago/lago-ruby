@@ -1,4 +1,4 @@
-# OpenapiClient::PlansPaginated
+# LagoAPI::PlansPaginated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::PlansPaginated.new(
+instance = LagoAPI::PlansPaginated.new(
   plans: null,
   meta: null
 )

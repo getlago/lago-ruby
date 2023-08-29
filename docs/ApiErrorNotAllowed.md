@@ -1,4 +1,4 @@
-# OpenapiClient::ApiErrorNotAllowed
+# LagoAPI::ApiErrorNotAllowed
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ApiErrorNotAllowed.new(
+instance = LagoAPI::ApiErrorNotAllowed.new(
   status: 405,
   error: Method Not Allowed,
   code: not_allowed
