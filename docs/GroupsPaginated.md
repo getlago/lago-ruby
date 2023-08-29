@@ -1,4 +1,4 @@
-# OpenapiClient::GroupsPaginated
+# LagoAPI::GroupsPaginated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::GroupsPaginated.new(
+instance = LagoAPI::GroupsPaginated.new(
   groups: null,
   meta: null
 )

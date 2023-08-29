@@ -1,4 +1,4 @@
-# OpenapiClient::SubscriptionCreateInputSubscription
+# LagoAPI::SubscriptionCreateInputSubscription
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::SubscriptionCreateInputSubscription.new(
+instance = LagoAPI::SubscriptionCreateInputSubscription.new(
   external_customer_id: 5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba,
   plan_code: premium,
   name: Repository A,

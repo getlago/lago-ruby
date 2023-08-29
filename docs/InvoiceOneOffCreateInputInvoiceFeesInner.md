@@ -1,4 +1,4 @@
-# OpenapiClient::InvoiceOneOffCreateInputInvoiceFeesInner
+# LagoAPI::InvoiceOneOffCreateInputInvoiceFeesInner
 
 ## Properties
 
@@ -8,17 +8,19 @@
 | **unit_amount_cents** | **Integer** | The amount of the fee per unit, expressed in cents. By default, the amount of the add-on is used. | [optional] |
 | **units** | **String** | The quantity of units associated with the fee. By default, only 1 unit is added to the invoice. | [optional] |
 | **description** | **String** | This is a description | [optional] |
+| **tax_codes** | **Array&lt;String&gt;** | List of unique code used to identify the taxes. | [optional] |
 
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::InvoiceOneOffCreateInputInvoiceFeesInner.new(
+instance = LagoAPI::InvoiceOneOffCreateInputInvoiceFeesInner.new(
   add_on_code: setup_fee,
   unit_amount_cents: 12000,
   units: 2.5,
-  description: The description of the fee line item in the invoice. By default, the description of the add-on is used.
+  description: The description of the fee line item in the invoice. By default, the description of the add-on is used.,
+  tax_codes: [&quot;french_standard_vat&quot;]
 )
 ```
 

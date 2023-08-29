@@ -1,4 +1,4 @@
-# OpenapiClient::CustomerUsageObject
+# LagoAPI::CustomerUsageObject
 
 ## Properties
 
@@ -16,9 +16,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CustomerUsageObject.new(
+instance = LagoAPI::CustomerUsageObject.new(
   from_datetime: 2022-07-01T00:00Z,
   to_datetime: 2022-07-31T23:59:59Z,
   issuing_date: 2022-08-01T23:59:59Z,

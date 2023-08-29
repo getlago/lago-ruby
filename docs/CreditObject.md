@@ -1,4 +1,4 @@
-# OpenapiClient::CreditObject
+# LagoAPI::CreditObject
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CreditObject.new(
+instance = LagoAPI::CreditObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   amount_cents: 1200,
   amount_currency: null,

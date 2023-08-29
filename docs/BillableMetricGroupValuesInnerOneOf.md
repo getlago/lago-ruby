@@ -1,4 +1,4 @@
-# OpenapiClient::BillableMetricGroupValuesInnerOneOf
+# LagoAPI::BillableMetricGroupValuesInnerOneOf
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::BillableMetricGroupValuesInnerOneOf.new(
+instance = LagoAPI::BillableMetricGroupValuesInnerOneOf.new(
   key: region,
   values: [&quot;us-east-1&quot;,&quot;us-east-2&quot;,&quot;eu-west-1&quot;]
 )

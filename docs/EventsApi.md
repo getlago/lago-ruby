@@ -1,4 +1,4 @@
-# OpenapiClient::EventsApi
+# LagoAPI::EventsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -22,20 +22,20 @@ This endpoint is used for transmitting a batch of usage measurement events to mu
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EventsApi.new
-event_batch_input = OpenapiClient::EventBatchInput.new({event: OpenapiClient::EventBatchInputEvent.new({transaction_id: 'transaction_1234567890', external_subscription_ids: ["sub_1234567890", "sub_0987654321"], code: 'storage'})}) # EventBatchInput | Batch events payload
+api_instance = LagoAPI::EventsApi.new
+event_batch_input = LagoAPI::EventBatchInput.new({event: LagoAPI::EventBatchInputEvent.new({transaction_id: 'transaction_1234567890', external_subscription_ids: ["sub_1234567890", "sub_0987654321"], code: 'storage'})}) # EventBatchInput | Batch events payload
 
 begin
   # Batch multiple events
   api_instance.create_batch_events(event_batch_input)
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->create_batch_events: #{e}"
 end
 ```
@@ -53,7 +53,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->create_batch_events_with_http_info: #{e}"
 end
 ```
@@ -90,20 +90,20 @@ This endpoint is used for transmitting usage measurement events to either a desi
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EventsApi.new
-event_input = OpenapiClient::EventInput.new({event: OpenapiClient::EventInputEvent.new({transaction_id: 'transaction_1234567890', code: 'storage'})}) # EventInput | Event payload
+api_instance = LagoAPI::EventsApi.new
+event_input = LagoAPI::EventInput.new({event: LagoAPI::EventInputEvent.new({transaction_id: 'transaction_1234567890', code: 'storage'})}) # EventInput | Event payload
 
 begin
   # Send usage events
   api_instance.create_event(event_input)
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->create_event: #{e}"
 end
 ```
@@ -121,7 +121,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->create_event_with_http_info: #{e}"
 end
 ```
@@ -158,21 +158,21 @@ Estimate the fees that would be created after reception of an event for a billab
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EventsApi.new
-event_estimate_fees_input = OpenapiClient::EventEstimateFeesInput.new({event: OpenapiClient::EventEstimateFeesInputEvent.new({code: 'storage'})}) # EventEstimateFeesInput | Event estimate payload
+api_instance = LagoAPI::EventsApi.new
+event_estimate_fees_input = LagoAPI::EventEstimateFeesInput.new({event: LagoAPI::EventEstimateFeesInputEvent.new({code: 'storage'})}) # EventEstimateFeesInput | Event estimate payload
 
 begin
   # Estimate fees for a pay in advance charge
   result = api_instance.event_estimate_fees(event_estimate_fees_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->event_estimate_fees: #{e}"
 end
 ```
@@ -190,7 +190,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Fees>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->event_estimate_fees_with_http_info: #{e}"
 end
 ```
@@ -227,21 +227,21 @@ This endpoint is used for retrieving a specific usage measurement event that has
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::EventsApi.new
+api_instance = LagoAPI::EventsApi.new
 transaction_id = 'transaction_1234567890' # String | This field represents the unique identifier sent for this specific event.
 
 begin
   # Retrieve a specific event
   result = api_instance.find_event(transaction_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->find_event: #{e}"
 end
 ```
@@ -259,7 +259,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Event>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling EventsApi->find_event_with_http_info: #{e}"
 end
 ```

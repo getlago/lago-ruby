@@ -1,4 +1,4 @@
-# OpenapiClient::CustomerChargeUsageObjectBillableMetric
+# LagoAPI::CustomerChargeUsageObjectBillableMetric
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CustomerChargeUsageObjectBillableMetric.new(
+instance = LagoAPI::CustomerChargeUsageObjectBillableMetric.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   name: Storage,
   code: storage,

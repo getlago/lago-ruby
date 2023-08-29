@@ -1,4 +1,4 @@
-# OpenapiClient::GroupObject
+# LagoAPI::GroupObject
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::GroupObject.new(
+instance = LagoAPI::GroupObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   key: region,
   value: us-east-1

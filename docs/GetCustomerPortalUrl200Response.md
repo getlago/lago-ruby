@@ -1,4 +1,4 @@
-# OpenapiClient::GetCustomerPortalUrl200Response
+# LagoAPI::GetCustomerPortalUrl200Response
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::GetCustomerPortalUrl200Response.new(
+instance = LagoAPI::GetCustomerPortalUrl200Response.new(
   customer: null
 )
 ```

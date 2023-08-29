@@ -7,5 +7,5 @@ rvm:
 script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
-  - gem build openapi_client.gemspec
-  - gem install ./openapi_client-1.0.0.gem
+  - gem build lago_ruby.gemspec
+  - gem install ./lago_ruby-0.45.0-beta.gem

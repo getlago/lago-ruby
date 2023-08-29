@@ -1,4 +1,4 @@
-# OpenapiClient::ApiErrorUnprocessableEntity
+# LagoAPI::ApiErrorUnprocessableEntity
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ApiErrorUnprocessableEntity.new(
+instance = LagoAPI::ApiErrorUnprocessableEntity.new(
   status: 422,
   error: Unprocessable entity,
   code: validation_errors,

@@ -1,4 +1,4 @@
-# OpenapiClient::TaxCreateInputTax
+# LagoAPI::TaxCreateInputTax
 
 ## Properties
 
@@ -13,9 +13,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::TaxCreateInputTax.new(
+instance = LagoAPI::TaxCreateInputTax.new(
   name: TVA,
   code: french_standard_vat,
   rate: 20.0,

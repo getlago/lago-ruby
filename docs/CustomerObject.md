@@ -1,4 +1,4 @@
-# OpenapiClient::CustomerObject
+# LagoAPI::CustomerObject
 
 ## Properties
 
@@ -34,9 +34,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CustomerObject.new(
+instance = LagoAPI::CustomerObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   sequential_id: 1,
   slug: LAG-1234-001,

@@ -1,4 +1,4 @@
-# OpenapiClient::SubscriptionUpdateInputSubscription
+# LagoAPI::SubscriptionUpdateInputSubscription
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::SubscriptionUpdateInputSubscription.new(
+instance = LagoAPI::SubscriptionUpdateInputSubscription.new(
   name: Repository B,
   subscription_at: 2022-08-08T00:00Z
 )

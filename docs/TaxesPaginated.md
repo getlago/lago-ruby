@@ -1,4 +1,4 @@
-# OpenapiClient::TaxesPaginated
+# LagoAPI::TaxesPaginated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::TaxesPaginated.new(
+instance = LagoAPI::TaxesPaginated.new(
   taxes: null,
   meta: null
 )

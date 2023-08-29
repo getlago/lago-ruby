@@ -1,4 +1,4 @@
-# OpenapiClient::CustomerChargeUsageObject
+# LagoAPI::CustomerChargeUsageObject
 
 ## Properties
 
@@ -14,9 +14,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CustomerChargeUsageObject.new(
+instance = LagoAPI::CustomerChargeUsageObject.new(
   units: 1.0,
   amount_cents: 123,
   amount_currency: null,

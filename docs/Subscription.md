@@ -1,4 +1,4 @@
-# OpenapiClient::Subscription
+# LagoAPI::Subscription
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::Subscription.new(
+instance = LagoAPI::Subscription.new(
   subscription: null
 )
 ```

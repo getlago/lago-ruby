@@ -1,4 +1,4 @@
-# OpenapiClient::InvoiceUpdateInput
+# LagoAPI::InvoiceUpdateInput
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::InvoiceUpdateInput.new(
+instance = LagoAPI::InvoiceUpdateInput.new(
   invoice: null
 )
 ```

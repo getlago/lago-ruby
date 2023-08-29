@@ -1,4 +1,4 @@
-# OpenapiClient::CreditNoteUpdateInputCreditNote
+# LagoAPI::CreditNoteUpdateInputCreditNote
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CreditNoteUpdateInputCreditNote.new(
+instance = LagoAPI::CreditNoteUpdateInputCreditNote.new(
   refund_status: succeeded
 )
 ```

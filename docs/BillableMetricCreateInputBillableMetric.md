@@ -1,4 +1,4 @@
-# OpenapiClient::BillableMetricCreateInputBillableMetric
+# LagoAPI::BillableMetricCreateInputBillableMetric
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::BillableMetricCreateInputBillableMetric.new(
+instance = LagoAPI::BillableMetricCreateInputBillableMetric.new(
   name: Storage,
   code: storage,
   description: GB of storage used in my application,

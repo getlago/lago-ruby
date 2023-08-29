@@ -1,4 +1,4 @@
-# OpenapiClient::WalletsApi
+# LagoAPI::WalletsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -25,21 +25,21 @@ This endpoint is used to create a wallet with prepaid credits.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WalletsApi.new
-wallet_create_input = OpenapiClient::WalletCreateInput.new # WalletCreateInput | Wallet payload
+api_instance = LagoAPI::WalletsApi.new
+wallet_create_input = LagoAPI::WalletCreateInput.new # WalletCreateInput | Wallet payload
 
 begin
   # Create a wallet
   result = api_instance.create_wallet(wallet_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->create_wallet: #{e}"
 end
 ```
@@ -57,7 +57,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Wallet>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->create_wallet_with_http_info: #{e}"
 end
 ```
@@ -94,21 +94,21 @@ This endpoint is used to top-up an active wallet.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WalletsApi.new
-wallet_transaction_create_input = OpenapiClient::WalletTransactionCreateInput.new({wallet_transaction: OpenapiClient::WalletTransactionCreateInputWalletTransaction.new({wallet_id: '1a901a90-1a90-1a90-1a90-1a901a901a90'})}) # WalletTransactionCreateInput | Wallet transaction payload
+api_instance = LagoAPI::WalletsApi.new
+wallet_transaction_create_input = LagoAPI::WalletTransactionCreateInput.new({wallet_transaction: LagoAPI::WalletTransactionCreateInputWalletTransaction.new({wallet_id: '1a901a90-1a90-1a90-1a90-1a901a901a90'})}) # WalletTransactionCreateInput | Wallet transaction payload
 
 begin
   # Top up a wallet
   result = api_instance.create_wallet_transaction(wallet_transaction_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->create_wallet_transaction: #{e}"
 end
 ```
@@ -126,7 +126,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletTransactions>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->create_wallet_transaction_with_http_info: #{e}"
 end
 ```
@@ -163,21 +163,21 @@ This endpoint is used to terminate an existing wallet with prepaid credits.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WalletsApi.new
+api_instance = LagoAPI::WalletsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the wallet within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the wallet’s record within the Lago system.
 
 begin
   # Terminate a wallet
   result = api_instance.destroy_wallet(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->destroy_wallet: #{e}"
 end
 ```
@@ -195,7 +195,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Wallet>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->destroy_wallet_with_http_info: #{e}"
 end
 ```
@@ -232,14 +232,14 @@ This endpoint is used to list all wallet transactions.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WalletsApi.new
+api_instance = LagoAPI::WalletsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the wallet within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the wallet’s record within the Lago system.
 opts = {
   page: 1, # Integer | Page number.
@@ -252,7 +252,7 @@ begin
   # List all wallet transactions
   result = api_instance.find_all_wallet_transactions(lago_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->find_all_wallet_transactions: #{e}"
 end
 ```
@@ -270,7 +270,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletTransactionsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->find_all_wallet_transactions_with_http_info: #{e}"
 end
 ```
@@ -311,14 +311,14 @@ This endpoint is used to list all wallets with prepaid credits.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WalletsApi.new
+api_instance = LagoAPI::WalletsApi.new
 external_customer_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | The customer external unique identifier (provided by your own application).
 opts = {
   page: 1, # Integer | Page number.
@@ -329,7 +329,7 @@ begin
   # List all wallets
   result = api_instance.find_all_wallets(external_customer_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->find_all_wallets: #{e}"
 end
 ```
@@ -347,7 +347,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <WalletsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->find_all_wallets_with_http_info: #{e}"
 end
 ```
@@ -386,21 +386,21 @@ This endpoint is used to retrieve an existing wallet with prepaid credits.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WalletsApi.new
+api_instance = LagoAPI::WalletsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the wallet within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the wallet’s record within the Lago system.
 
 begin
   # Retrieve a wallet
   result = api_instance.find_wallet(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->find_wallet: #{e}"
 end
 ```
@@ -418,7 +418,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Wallet>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->find_wallet_with_http_info: #{e}"
 end
 ```
@@ -455,22 +455,22 @@ This endpoint is used to update an existing wallet with prepaid credits.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::WalletsApi.new
+api_instance = LagoAPI::WalletsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the wallet within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the wallet’s record within the Lago system.
-wallet_update_input = OpenapiClient::WalletUpdateInput.new({wallet: OpenapiClient::WalletUpdateInputWallet.new}) # WalletUpdateInput | Wallet update payload
+wallet_update_input = LagoAPI::WalletUpdateInput.new({wallet: LagoAPI::WalletUpdateInputWallet.new}) # WalletUpdateInput | Wallet update payload
 
 begin
   # Update a wallet
   result = api_instance.update_wallet(lago_id, wallet_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->update_wallet: #{e}"
 end
 ```
@@ -488,7 +488,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Wallet>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling WalletsApi->update_wallet_with_http_info: #{e}"
 end
 ```

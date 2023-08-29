@@ -1,4 +1,4 @@
-# OpenapiClient::CreditNotesApi
+# LagoAPI::CreditNotesApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -24,21 +24,21 @@ This endpoint creates a new credit note.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CreditNotesApi.new
-credit_note_create_input = OpenapiClient::CreditNoteCreateInput.new({credit_note: OpenapiClient::CreditNoteCreateInputCreditNote.new({invoice_id: '1a901a90-1a90-1a90-1a90-1a901a901a90', items: [{"fee_id": "1a901a90-1a90-1a90-1a90-1a901a901a90", "amount_cents": 10}, {"fee_id": "1a901a90-1a90-1a90-1a90-1a901a901a91", "amount_cents": 5}]})}) # CreditNoteCreateInput | Credit note payload
+api_instance = LagoAPI::CreditNotesApi.new
+credit_note_create_input = LagoAPI::CreditNoteCreateInput.new({credit_note: LagoAPI::CreditNoteCreateInputCreditNote.new({invoice_id: '1a901a90-1a90-1a90-1a90-1a901a901a90', items: [{"fee_id": "1a901a90-1a90-1a90-1a90-1a901a901a90", "amount_cents": 10}, {"fee_id": "1a901a90-1a90-1a90-1a90-1a901a901a91", "amount_cents": 5}]})}) # CreditNoteCreateInput | Credit note payload
 
 begin
   # Create a credit note
   result = api_instance.create_credit_note(credit_note_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->create_credit_note: #{e}"
 end
 ```
@@ -56,7 +56,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreditNote>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->create_credit_note_with_http_info: #{e}"
 end
 ```
@@ -93,21 +93,21 @@ This endpoint downloads the PDF of an existing credit note.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CreditNotesApi.new
+api_instance = LagoAPI::CreditNotesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | The credit note unique identifier, created by Lago.
 
 begin
   # Download a credit note PDF
   result = api_instance.download_credit_note(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->download_credit_note: #{e}"
 end
 ```
@@ -125,7 +125,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreditNote>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->download_credit_note_with_http_info: #{e}"
 end
 ```
@@ -162,14 +162,14 @@ This endpoint list all existing credit notes.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CreditNotesApi.new
+api_instance = LagoAPI::CreditNotesApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20, # Integer | Number of records per page.
@@ -180,7 +180,7 @@ begin
   # List all credit notes
   result = api_instance.find_all_credit_notes(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->find_all_credit_notes: #{e}"
 end
 ```
@@ -198,7 +198,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreditNotes>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->find_all_credit_notes_with_http_info: #{e}"
 end
 ```
@@ -237,21 +237,21 @@ This endpoint retrieves an existing credit note.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CreditNotesApi.new
+api_instance = LagoAPI::CreditNotesApi.new
 lago_id = '12345' # String | The credit note unique identifier, created by Lago.
 
 begin
   # Retrieve a credit note
   result = api_instance.find_credit_note(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->find_credit_note: #{e}"
 end
 ```
@@ -269,7 +269,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreditNote>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->find_credit_note_with_http_info: #{e}"
 end
 ```
@@ -306,22 +306,22 @@ This endpoint updates an existing credit note.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CreditNotesApi.new
+api_instance = LagoAPI::CreditNotesApi.new
 lago_id = '12345' # String | The credit note unique identifier, created by Lago.
-credit_note_update_input = OpenapiClient::CreditNoteUpdateInput.new({credit_note: OpenapiClient::CreditNoteUpdateInputCreditNote.new({refund_status: 'pending'})}) # CreditNoteUpdateInput | Credit note update payload
+credit_note_update_input = LagoAPI::CreditNoteUpdateInput.new({credit_note: LagoAPI::CreditNoteUpdateInputCreditNote.new({refund_status: 'pending'})}) # CreditNoteUpdateInput | Credit note update payload
 
 begin
   # Update a credit note
   result = api_instance.update_credit_note(lago_id, credit_note_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->update_credit_note: #{e}"
 end
 ```
@@ -339,7 +339,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreditNote>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->update_credit_note_with_http_info: #{e}"
 end
 ```
@@ -377,21 +377,21 @@ This endpoint voids an existing credit note.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CreditNotesApi.new
+api_instance = LagoAPI::CreditNotesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | The credit note unique identifier, created by Lago.
 
 begin
   # Void a credit note
   result = api_instance.void_credit_note(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->void_credit_note: #{e}"
 end
 ```
@@ -409,7 +409,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CreditNote>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CreditNotesApi->void_credit_note_with_http_info: #{e}"
 end
 ```

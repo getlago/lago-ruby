@@ -1,4 +1,4 @@
-# OpenapiClient::InvoiceAppliedTaxObject
+# LagoAPI::InvoiceAppliedTaxObject
 
 ## Properties
 
@@ -19,9 +19,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::InvoiceAppliedTaxObject.new(
+instance = LagoAPI::InvoiceAppliedTaxObject.new(
   lago_invoice_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   fees_amount_cents: 20000,
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,

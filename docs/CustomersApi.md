@@ -1,4 +1,4 @@
-# OpenapiClient::CustomersApi
+# LagoAPI::CustomersApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -25,21 +25,21 @@ This endpoint creates a new customer.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomersApi.new
-customer_create_input = OpenapiClient::CustomerCreateInput.new({customer: OpenapiClient::CustomerCreateInputCustomer.new({external_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba'})}) # CustomerCreateInput | Customer payload
+api_instance = LagoAPI::CustomersApi.new
+customer_create_input = LagoAPI::CustomerCreateInput.new({customer: LagoAPI::CustomerCreateInputCustomer.new({external_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba'})}) # CustomerCreateInput | Customer payload
 
 begin
   # Create a customer
   result = api_instance.create_customer(customer_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->create_customer: #{e}"
 end
 ```
@@ -57,7 +57,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Customer>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->create_customer_with_http_info: #{e}"
 end
 ```
@@ -94,14 +94,14 @@ This endpoint is used to delete a specific coupon that has been applied to a cus
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomersApi.new
+api_instance = LagoAPI::CustomersApi.new
 external_customer_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | The customer external unique identifier (provided by your own application)
 applied_coupon_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier of the applied coupon, created by Lago.
 
@@ -109,7 +109,7 @@ begin
   # Delete an applied coupon
   result = api_instance.delete_applied_coupon(external_customer_id, applied_coupon_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->delete_applied_coupon: #{e}"
 end
 ```
@@ -127,7 +127,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AppliedCoupon>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->delete_applied_coupon_with_http_info: #{e}"
 end
 ```
@@ -165,21 +165,21 @@ This endpoint deletes an existing customer.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomersApi.new
+api_instance = LagoAPI::CustomersApi.new
 external_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | External ID of the existing customer
 
 begin
   # Delete a customer
   result = api_instance.destroy_customer(external_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->destroy_customer: #{e}"
 end
 ```
@@ -197,7 +197,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Customer>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->destroy_customer_with_http_info: #{e}"
 end
 ```
@@ -234,14 +234,14 @@ This endpoint retrieves all existing customers.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomersApi.new
+api_instance = LagoAPI::CustomersApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20 # Integer | Number of records per page.
@@ -251,7 +251,7 @@ begin
   # List all customers
   result = api_instance.find_all_customers(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->find_all_customers: #{e}"
 end
 ```
@@ -269,7 +269,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomersPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->find_all_customers_with_http_info: #{e}"
 end
 ```
@@ -307,21 +307,21 @@ This endpoint retrieves an existing customer.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomersApi.new
+api_instance = LagoAPI::CustomersApi.new
 external_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | External ID of the existing customer
 
 begin
   # Retrieve a customer
   result = api_instance.find_customer(external_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->find_customer: #{e}"
 end
 ```
@@ -339,7 +339,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Customer>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->find_customer_with_http_info: #{e}"
 end
 ```
@@ -376,14 +376,14 @@ This endpoint enables the retrieval of the usage-based billing data for a custom
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomersApi.new
+api_instance = LagoAPI::CustomersApi.new
 external_customer_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | The customer external unique identifier (provided by your own application).
 external_subscription_id = 'sub_1234567890' # String | The unique identifier of the subscription within your application.
 
@@ -391,7 +391,7 @@ begin
   # Retrieve customer current usage
   result = api_instance.find_customer_current_usage(external_customer_id, external_subscription_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->find_customer_current_usage: #{e}"
 end
 ```
@@ -409,7 +409,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CustomerUsage>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->find_customer_current_usage_with_http_info: #{e}"
 end
 ```
@@ -447,21 +447,21 @@ Retrieves an embeddable link for displaying a customer portal.  This endpoint al
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CustomersApi.new
+api_instance = LagoAPI::CustomersApi.new
 external_customer_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | External ID of the existing customer
 
 begin
   # Get a customer portal URL
   result = api_instance.get_customer_portal_url(external_customer_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->get_customer_portal_url: #{e}"
 end
 ```
@@ -479,7 +479,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <GetCustomerPortalUrl200Response>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CustomersApi->get_customer_portal_url_with_http_info: #{e}"
 end
 ```

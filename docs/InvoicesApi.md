@@ -1,4 +1,4 @@
-# OpenapiClient::InvoicesApi
+# LagoAPI::InvoicesApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -26,21 +26,21 @@ This endpoint is used for issuing a one-off invoice.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
-invoice_one_off_create_input = OpenapiClient::InvoiceOneOffCreateInput.new({invoice: OpenapiClient::InvoiceOneOffCreateInputInvoice.new({external_customer_id: 'hooli_1234', fees: [OpenapiClient::InvoiceOneOffCreateInputInvoiceFeesInner.new({add_on_code: 'setup_fee'})]})}) # InvoiceOneOffCreateInput | Invoice payload
+api_instance = LagoAPI::InvoicesApi.new
+invoice_one_off_create_input = LagoAPI::InvoiceOneOffCreateInput.new({invoice: LagoAPI::InvoiceOneOffCreateInputInvoice.new({external_customer_id: 'hooli_1234', fees: [LagoAPI::InvoiceOneOffCreateInputInvoiceFeesInner.new({add_on_code: 'setup_fee'})]})}) # InvoiceOneOffCreateInput | Invoice payload
 
 begin
   # Create a one-off invoice
   result = api_instance.create_invoice(invoice_one_off_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->create_invoice: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Invoice>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->create_invoice_with_http_info: #{e}"
 end
 ```
@@ -95,21 +95,21 @@ This endpoint is used for downloading a specific invoice PDF document.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
+api_instance = LagoAPI::InvoicesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the invoice within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the invoice’s record within the Lago system.
 
 begin
   # Download an invoice PDF
   result = api_instance.download_invoice(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->download_invoice: #{e}"
 end
 ```
@@ -127,7 +127,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Invoice>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->download_invoice_with_http_info: #{e}"
 end
 ```
@@ -164,21 +164,21 @@ This endpoint is used for finalizing a draft invoice.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
+api_instance = LagoAPI::InvoicesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the invoice within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the invoice’s record within the Lago system.
 
 begin
   # Finalize a draft invoice
   result = api_instance.finalize_invoice(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->finalize_invoice: #{e}"
 end
 ```
@@ -196,7 +196,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Invoice>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->finalize_invoice_with_http_info: #{e}"
 end
 ```
@@ -233,14 +233,14 @@ This endpoint is used for retrievign all invoices.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
+api_instance = LagoAPI::InvoicesApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20, # Integer | Number of records per page.
@@ -255,7 +255,7 @@ begin
   # List all invoices
   result = api_instance.find_all_invoices(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->find_all_invoices: #{e}"
 end
 ```
@@ -273,7 +273,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <InvoicesPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->find_all_invoices_with_http_info: #{e}"
 end
 ```
@@ -316,21 +316,21 @@ This endpoint is used for retrieving a specific invoice that has been issued.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
+api_instance = LagoAPI::InvoicesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the invoice within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the invoice’s record within the Lago system.
 
 begin
   # Retrieve an invoice
   result = api_instance.find_invoice(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->find_invoice: #{e}"
 end
 ```
@@ -348,7 +348,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Invoice>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->find_invoice_with_http_info: #{e}"
 end
 ```
@@ -385,21 +385,21 @@ This endpoint is used for refreshing a draft invoice.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
+api_instance = LagoAPI::InvoicesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the invoice within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the invoice’s record within the Lago system.
 
 begin
   # Refresh a draft invoice
   result = api_instance.refresh_invoice(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->refresh_invoice: #{e}"
 end
 ```
@@ -417,7 +417,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Invoice>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->refresh_invoice_with_http_info: #{e}"
 end
 ```
@@ -454,20 +454,20 @@ This endpoint resends an invoice for collection and retry a payment.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
+api_instance = LagoAPI::InvoicesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the invoice within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the invoice’s record within the Lago system.
 
 begin
   # Retry an invoice payment
   api_instance.retry_payment(lago_id)
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->retry_payment: #{e}"
 end
 ```
@@ -485,7 +485,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->retry_payment_with_http_info: #{e}"
 end
 ```
@@ -522,22 +522,22 @@ This endpoint is used for updating an existing invoice.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::InvoicesApi.new
+api_instance = LagoAPI::InvoicesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the invoice within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the invoice’s record within the Lago system.
-invoice_update_input = OpenapiClient::InvoiceUpdateInput.new({invoice: OpenapiClient::InvoiceUpdateInputInvoice.new}) # InvoiceUpdateInput | Update an existing invoice
+invoice_update_input = LagoAPI::InvoiceUpdateInput.new({invoice: LagoAPI::InvoiceUpdateInputInvoice.new}) # InvoiceUpdateInput | Update an existing invoice
 
 begin
   # Update an invoice
   result = api_instance.update_invoice(lago_id, invoice_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->update_invoice: #{e}"
 end
 ```
@@ -555,7 +555,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Invoice>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling InvoicesApi->update_invoice_with_http_info: #{e}"
 end
 ```

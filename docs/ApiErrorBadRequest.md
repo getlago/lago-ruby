@@ -1,4 +1,4 @@
-# OpenapiClient::ApiErrorBadRequest
+# LagoAPI::ApiErrorBadRequest
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ApiErrorBadRequest.new(
+instance = LagoAPI::ApiErrorBadRequest.new(
   status: 400,
   error: Bad request
 )

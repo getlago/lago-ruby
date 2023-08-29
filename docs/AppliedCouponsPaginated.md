@@ -1,4 +1,4 @@
-# OpenapiClient::AppliedCouponsPaginated
+# LagoAPI::AppliedCouponsPaginated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::AppliedCouponsPaginated.new(
+instance = LagoAPI::AppliedCouponsPaginated.new(
   applied_coupons: null,
   meta: null
 )

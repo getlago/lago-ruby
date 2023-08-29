@@ -1,4 +1,4 @@
-# OpenapiClient::Currency
+# LagoAPI::Currency
 
 ## Properties
 
@@ -8,8 +8,8 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::Currency.new()
+instance = LagoAPI::Currency.new()
 ```
 

@@ -1,4 +1,4 @@
-# OpenapiClient::CouponBaseInput
+# LagoAPI::CouponBaseInput
 
 ## Properties
 
@@ -21,9 +21,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CouponBaseInput.new(
+instance = LagoAPI::CouponBaseInput.new(
   name: Startup Deal,
   code: startup_deal,
   description: I am a coupon description,

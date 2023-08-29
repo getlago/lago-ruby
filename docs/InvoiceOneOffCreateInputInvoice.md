@@ -1,4 +1,4 @@
-# OpenapiClient::InvoiceOneOffCreateInputInvoice
+# LagoAPI::InvoiceOneOffCreateInputInvoice
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::InvoiceOneOffCreateInputInvoice.new(
+instance = LagoAPI::InvoiceOneOffCreateInputInvoice.new(
   external_customer_id: hooli_1234,
   currency: null,
   fees: null

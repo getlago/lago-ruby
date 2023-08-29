@@ -1,4 +1,4 @@
-# OpenapiClient::EventObject
+# LagoAPI::EventObject
 
 ## Properties
 
@@ -18,9 +18,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::EventObject.new(
+instance = LagoAPI::EventObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   transaction_id: transaction_1234567890,
   lago_customer_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,

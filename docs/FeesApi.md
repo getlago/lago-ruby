@@ -1,4 +1,4 @@
-# OpenapiClient::FeesApi
+# LagoAPI::FeesApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -21,20 +21,20 @@ This endpoint is used for retrieving all fees that has been issued.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::FeesApi.new
+api_instance = LagoAPI::FeesApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20, # Integer | Number of records per page.
   external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', # String | Unique identifier assigned to the customer in your application.
   external_subscription_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', # String | External subscription ID
-  currency: OpenapiClient::Currency::AED, # Currency | Filter results by fee’s currency.
+  currency: LagoAPI::Currency::AED, # Currency | Filter results by fee’s currency.
   fee_type: 'charge', # String | The fee type. Possible values are `add-on`, `charge`, `credit` or `subscription`.
   billable_metric_code: 'bm_code', # String | Filter results by the `code` of the billable metric attached to the fee. Only applies to `charge` types.
   payment_status: 'pending', # String | Indicates the payment status of the fee. It represents the current status of the payment associated with the fee. The possible values for this field are `pending`, `succeeded`, `failed` and refunded`.
@@ -52,7 +52,7 @@ begin
   # List all fees
   result = api_instance.find_all_fees(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling FeesApi->find_all_fees: #{e}"
 end
 ```
@@ -70,7 +70,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <FeesPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling FeesApi->find_all_fees_with_http_info: #{e}"
 end
 ```
@@ -122,21 +122,21 @@ This endpoint is used for retrieving a specific fee that has been issued.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::FeesApi.new
+api_instance = LagoAPI::FeesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the fee within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the fee’s record within the Lago system.
 
 begin
   # Retrieve a specific fee
   result = api_instance.find_fee(lago_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling FeesApi->find_fee: #{e}"
 end
 ```
@@ -154,7 +154,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Fee>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling FeesApi->find_fee_with_http_info: #{e}"
 end
 ```
@@ -191,24 +191,24 @@ This endpoint is used for updating a specific fee that has been issued.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::FeesApi.new
+api_instance = LagoAPI::FeesApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the fee within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the fee’s record within the Lago system.
 opts = {
-  fee_update_input: OpenapiClient::FeeUpdateInput.new({fee: OpenapiClient::FeeUpdateInputFee.new({payment_status: 'pending'})}) # FeeUpdateInput | Fee payload
+  fee_update_input: LagoAPI::FeeUpdateInput.new({fee: LagoAPI::FeeUpdateInputFee.new({payment_status: 'pending'})}) # FeeUpdateInput | Fee payload
 }
 
 begin
   # Update a fee
   result = api_instance.update_fee(lago_id, opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling FeesApi->update_fee: #{e}"
 end
 ```
@@ -226,7 +226,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Fee>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling FeesApi->update_fee_with_http_info: #{e}"
 end
 ```

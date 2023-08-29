@@ -1,4 +1,4 @@
-# OpenapiClient::AddOnCreateInput
+# LagoAPI::AddOnCreateInput
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::AddOnCreateInput.new(
+instance = LagoAPI::AddOnCreateInput.new(
   add_on: null
 )
 ```

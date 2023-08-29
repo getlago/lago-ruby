@@ -1,4 +1,4 @@
-# OpenapiClient::AppliedCouponObject
+# LagoAPI::AppliedCouponObject
 
 ## Properties
 
@@ -25,9 +25,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::AppliedCouponObject.new(
+instance = LagoAPI::AppliedCouponObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_coupon_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   coupon_code: startup_deal,

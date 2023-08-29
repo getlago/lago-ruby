@@ -1,4 +1,4 @@
-# OpenapiClient::CustomerBillingConfiguration
+# LagoAPI::CustomerBillingConfiguration
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::CustomerBillingConfiguration.new(
+instance = LagoAPI::CustomerBillingConfiguration.new(
   invoice_grace_period: 3,
   payment_provider: stripe,
   provider_customer_id: cus_12345,

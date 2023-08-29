@@ -1,4 +1,4 @@
-# OpenapiClient::CouponsApi
+# LagoAPI::CouponsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -26,21 +26,21 @@ This endpoint is used to apply a specific coupon to a customer, before or during
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
-applied_coupon_input = OpenapiClient::AppliedCouponInput.new({applied_coupon: OpenapiClient::AppliedCouponInputAppliedCoupon.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', coupon_code: 'startup_deal'})}) # AppliedCouponInput | Apply coupon payload
+api_instance = LagoAPI::CouponsApi.new
+applied_coupon_input = LagoAPI::AppliedCouponInput.new({applied_coupon: LagoAPI::AppliedCouponInputAppliedCoupon.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', coupon_code: 'startup_deal'})}) # AppliedCouponInput | Apply coupon payload
 
 begin
   # Apply a coupon to a customer
   result = api_instance.apply_coupon(applied_coupon_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->apply_coupon: #{e}"
 end
 ```
@@ -58,7 +58,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AppliedCoupon>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->apply_coupon_with_http_info: #{e}"
 end
 ```
@@ -95,21 +95,21 @@ This endpoint is used to create a coupon that can be then attached to a customer
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
-coupon_create_input = OpenapiClient::CouponCreateInput.new({coupon: OpenapiClient::CouponCreateInputCoupon.new({name: 'Startup Deal', code: 'startup_deal', coupon_type: 'fixed_amount', frequency: 'once'})}) # CouponCreateInput | Coupon payload
+api_instance = LagoAPI::CouponsApi.new
+coupon_create_input = LagoAPI::CouponCreateInput.new({coupon: LagoAPI::CouponCreateInputCoupon.new({name: 'Startup Deal', code: 'startup_deal', coupon_type: 'fixed_amount', frequency: 'once'})}) # CouponCreateInput | Coupon payload
 
 begin
   # Create a coupon
   result = api_instance.create_coupon(coupon_create_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->create_coupon: #{e}"
 end
 ```
@@ -127,7 +127,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Coupon>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->create_coupon_with_http_info: #{e}"
 end
 ```
@@ -164,14 +164,14 @@ This endpoint is used to delete a specific coupon that has been applied to a cus
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
+api_instance = LagoAPI::CouponsApi.new
 external_customer_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | The customer external unique identifier (provided by your own application)
 applied_coupon_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier of the applied coupon, created by Lago.
 
@@ -179,7 +179,7 @@ begin
   # Delete an applied coupon
   result = api_instance.delete_applied_coupon(external_customer_id, applied_coupon_id)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->delete_applied_coupon: #{e}"
 end
 ```
@@ -197,7 +197,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AppliedCoupon>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->delete_applied_coupon_with_http_info: #{e}"
 end
 ```
@@ -235,21 +235,21 @@ This endpoint is used to delete a coupon.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
+api_instance = LagoAPI::CouponsApi.new
 code = 'startup_deal' # String | Unique code used to identify the coupon.
 
 begin
   # Delete a coupon
   result = api_instance.destroy_coupon(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->destroy_coupon: #{e}"
 end
 ```
@@ -267,7 +267,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Coupon>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->destroy_coupon_with_http_info: #{e}"
 end
 ```
@@ -304,14 +304,14 @@ This endpoint is used to list all applied coupons. You can filter by coupon stat
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
+api_instance = LagoAPI::CouponsApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20, # Integer | Number of records per page.
@@ -323,7 +323,7 @@ begin
   # List all applied coupons
   result = api_instance.find_all_applied_coupons(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->find_all_applied_coupons: #{e}"
 end
 ```
@@ -341,7 +341,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <AppliedCouponsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->find_all_applied_coupons_with_http_info: #{e}"
 end
 ```
@@ -381,14 +381,14 @@ This endpoint is used to list all existing coupons.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
+api_instance = LagoAPI::CouponsApi.new
 opts = {
   page: 1, # Integer | Page number.
   per_page: 20 # Integer | Number of records per page.
@@ -398,7 +398,7 @@ begin
   # List all coupons
   result = api_instance.find_all_coupons(opts)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->find_all_coupons: #{e}"
 end
 ```
@@ -416,7 +416,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CouponsPaginated>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->find_all_coupons_with_http_info: #{e}"
 end
 ```
@@ -454,21 +454,21 @@ This endpoint is used to retrieve a specific coupon.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
+api_instance = LagoAPI::CouponsApi.new
 code = 'startup_deal' # String | Unique code used to identify the coupon.
 
 begin
   # Retrieve a coupon
   result = api_instance.find_coupon(code)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->find_coupon: #{e}"
 end
 ```
@@ -486,7 +486,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Coupon>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->find_coupon_with_http_info: #{e}"
 end
 ```
@@ -523,22 +523,22 @@ This endpoint is used to update a coupon that can be then attached to a customer
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::CouponsApi.new
+api_instance = LagoAPI::CouponsApi.new
 code = 'startup_deal' # String | Unique code used to identify the coupon.
-coupon_update_input = OpenapiClient::CouponUpdateInput.new({coupon: OpenapiClient::CouponBaseInput.new}) # CouponUpdateInput | Coupon payload
+coupon_update_input = LagoAPI::CouponUpdateInput.new({coupon: LagoAPI::CouponBaseInput.new}) # CouponUpdateInput | Coupon payload
 
 begin
   # Update a coupon
   result = api_instance.update_coupon(code, coupon_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->update_coupon: #{e}"
 end
 ```
@@ -556,7 +556,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Coupon>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling CouponsApi->update_coupon_with_http_info: #{e}"
 end
 ```

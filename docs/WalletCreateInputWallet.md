@@ -1,4 +1,4 @@
-# OpenapiClient::WalletCreateInputWallet
+# LagoAPI::WalletCreateInputWallet
 
 ## Properties
 
@@ -15,9 +15,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::WalletCreateInputWallet.new(
+instance = LagoAPI::WalletCreateInputWallet.new(
   name: Prepaid,
   rate_amount: 1.5,
   currency: null,

@@ -1,4 +1,4 @@
-# OpenapiClient::ChargePropertiesVolumeRangesInner
+# LagoAPI::ChargePropertiesVolumeRangesInner
 
 ## Properties
 
@@ -12,9 +12,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::ChargePropertiesVolumeRangesInner.new(
+instance = LagoAPI::ChargePropertiesVolumeRangesInner.new(
   from_value: 0,
   to_value: 10,
   flat_amount: 10,

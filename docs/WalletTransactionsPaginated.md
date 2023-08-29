@@ -1,4 +1,4 @@
-# OpenapiClient::WalletTransactionsPaginated
+# LagoAPI::WalletTransactionsPaginated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::WalletTransactionsPaginated.new(
+instance = LagoAPI::WalletTransactionsPaginated.new(
   wallet_transactions: null,
   meta: null
 )

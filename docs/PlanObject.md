@@ -1,4 +1,4 @@
-# OpenapiClient::PlanObject
+# LagoAPI::PlanObject
 
 ## Properties
 
@@ -8,7 +8,7 @@
 | **name** | **String** | The name of the plan. |  |
 | **created_at** | **Time** | The date and time when the plan was created. It is expressed in UTC format according to the ISO 8601 datetime standard. This field provides the timestamp for the exact moment when the plan was initially created. |  |
 | **code** | **String** | The code of the plan. It serves as a unique identifier associated with a particular plan. The code is typically used for internal or system-level identification purposes, like assigning a subscription, for instance. |  |
-| **interval** | **String** | The interval used for recurring billing. It represents the frequency at which subscription billing occurs. The interval can be one of the following values: &#x60;yearly&#x60;, &#x60;monthly&#x60; or &#x60;weekly&#x60;. |  |
+| **interval** | **String** | The interval used for recurring billing. It represents the frequency at which subscription billing occurs. The interval can be one of the following values: &#x60;yearly&#x60;, &#x60;quarterly&#x60;, &#x60;monthly&#x60; or &#x60;weekly&#x60;. |  |
 | **description** | **String** | The description on the plan. | [optional] |
 | **amount_cents** | **Integer** | The base cost of the plan, excluding any applicable taxes, that is billed on a recurring basis. This value is defined at 0 if your plan is a pay-as-you-go plan. |  |
 | **amount_currency** | [**Currency**](Currency.md) |  |  |
@@ -23,9 +23,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::PlanObject.new(
+instance = LagoAPI::PlanObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   name: Startup,
   created_at: 2023-06-27T19:43:42Z,

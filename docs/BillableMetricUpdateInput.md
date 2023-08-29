@@ -1,4 +1,4 @@
-# OpenapiClient::BillableMetricUpdateInput
+# LagoAPI::BillableMetricUpdateInput
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::BillableMetricUpdateInput.new(
+instance = LagoAPI::BillableMetricUpdateInput.new(
   billable_metric: null
 )
 ```

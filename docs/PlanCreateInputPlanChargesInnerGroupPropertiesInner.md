@@ -1,4 +1,4 @@
-# OpenapiClient::PlanCreateInputPlanChargesInnerGroupPropertiesInner
+# LagoAPI::PlanCreateInputPlanChargesInnerGroupPropertiesInner
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::PlanCreateInputPlanChargesInnerGroupPropertiesInner.new(
+instance = LagoAPI::PlanCreateInputPlanChargesInnerGroupPropertiesInner.new(
   group_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   values: null
 )

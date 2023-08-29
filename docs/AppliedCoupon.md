@@ -1,4 +1,4 @@
-# OpenapiClient::AppliedCoupon
+# LagoAPI::AppliedCoupon
 
 ## Properties
 
@@ -9,9 +9,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::AppliedCoupon.new(
+instance = LagoAPI::AppliedCoupon.new(
   applied_coupon: null
 )
 ```

@@ -1,4 +1,4 @@
-# OpenapiClient::BillableMetricsPaginated
+# LagoAPI::BillableMetricsPaginated
 
 ## Properties
 
@@ -10,9 +10,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::BillableMetricsPaginated.new(
+instance = LagoAPI::BillableMetricsPaginated.new(
   billable_metrics: null,
   meta: null
 )

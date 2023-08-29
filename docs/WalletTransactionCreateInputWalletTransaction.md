@@ -1,4 +1,4 @@
-# OpenapiClient::WalletTransactionCreateInputWalletTransaction
+# LagoAPI::WalletTransactionCreateInputWalletTransaction
 
 ## Properties
 
@@ -11,9 +11,9 @@
 ## Example
 
 ```ruby
-require 'openapi_client'
+require 'lago_ruby'
 
-instance = OpenapiClient::WalletTransactionCreateInputWalletTransaction.new(
+instance = LagoAPI::WalletTransactionCreateInputWalletTransaction.new(
   wallet_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   paid_credits: 20.0,
   granted_credits: 10.0

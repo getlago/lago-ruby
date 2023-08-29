@@ -1,4 +1,4 @@
-# OpenapiClient::OrganizationsApi
+# LagoAPI::OrganizationsApi
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
@@ -19,21 +19,21 @@ This endpoint is used to update your own organization's settings.
 
 ```ruby
 require 'time'
-require 'openapi_client'
+require 'lago_ruby'
 # setup authorization
-OpenapiClient.configure do |config|
+LagoAPI.configure do |config|
   # Configure Bearer authorization: bearerAuth
   config.access_token = 'YOUR_BEARER_TOKEN'
 end
 
-api_instance = OpenapiClient::OrganizationsApi.new
-organization_update_input = OpenapiClient::OrganizationUpdateInput.new({organization: OpenapiClient::OrganizationUpdateInputOrganization.new}) # OrganizationUpdateInput | Update an existing organization
+api_instance = LagoAPI::OrganizationsApi.new
+organization_update_input = LagoAPI::OrganizationUpdateInput.new({organization: LagoAPI::OrganizationUpdateInputOrganization.new}) # OrganizationUpdateInput | Update an existing organization
 
 begin
   # Update your organization
   result = api_instance.update_organization(organization_update_input)
   p result
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling OrganizationsApi->update_organization: #{e}"
 end
 ```
@@ -51,7 +51,7 @@ begin
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Organization>
-rescue OpenapiClient::ApiError => e
+rescue LagoAPI::ApiError => e
   puts "Error when calling OrganizationsApi->update_organization_with_http_info: #{e}"
 end
 ```
