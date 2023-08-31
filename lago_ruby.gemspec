@@ -23,9 +23,13 @@ Gem::Specification.new do |s|
   s.email       = ["tech@getlago.com"]
   s.homepage    = "https://github.com/getlago/lago-ruby"
   s.summary     = "Ruby wrapper for the Lago API"
-  s.description = "Lago API allows your application to interact with the Lago API"
+  s.description = "Enable your ruby application to interact with the Lago API"
   s.license     = "MIT"
   s.required_ruby_version = ">= 2.7"
+
+  s.metadata['homepage_uri'] = "https://www.getlago.com/"
+  s.metadata['source_code_uri'] = s.homepage
+  s.metadata['documentation_uri'] = "https://doc.getlago.com"
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
 
