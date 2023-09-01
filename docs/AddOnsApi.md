@@ -4,81 +4,11 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**apply_add_on**](AddOnsApi.md#apply_add_on) | **POST** /applied_add_ons | Apply an add-on to a customer |
 | [**create_add_on**](AddOnsApi.md#create_add_on) | **POST** /add_ons | Create an add-on |
 | [**destroy_add_on**](AddOnsApi.md#destroy_add_on) | **DELETE** /add_ons/{code} | Delete an add-on |
 | [**find_add_on**](AddOnsApi.md#find_add_on) | **GET** /add_ons/{code} | Retrieve an add-on |
 | [**find_all_add_ons**](AddOnsApi.md#find_all_add_ons) | **GET** /add_ons | List all add-ons |
 | [**update_add_on**](AddOnsApi.md#update_add_on) | **PUT** /add_ons/{code} | Update an add-on |
-
-
-## apply_add_on
-
-> <AppliedAddOn> apply_add_on(applied_add_on_input)
-
-Apply an add-on to a customer
-
-Apply an add-on to a customer
-
-### Examples
-
-```ruby
-require 'time'
-require 'lago_ruby'
-# setup authorization
-LagoAPI.configure do |config|
-  # Configure Bearer authorization: bearerAuth
-  config.access_token = 'YOUR_BEARER_TOKEN'
-end
-
-api_instance = LagoAPI::AddOnsApi.new
-applied_add_on_input = LagoAPI::AppliedAddOnInput.new({applied_add_on: LagoAPI::AppliedAddOnInputAppliedAddOn.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', add_on_code: 'setup_fee'})}) # AppliedAddOnInput | Apply add-on payload
-
-begin
-  # Apply an add-on to a customer
-  result = api_instance.apply_add_on(applied_add_on_input)
-  p result
-rescue LagoAPI::ApiError => e
-  puts "Error when calling AddOnsApi->apply_add_on: #{e}"
-end
-```
-
-#### Using the apply_add_on_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<AppliedAddOn>, Integer, Hash)> apply_add_on_with_http_info(applied_add_on_input)
-
-```ruby
-begin
-  # Apply an add-on to a customer
-  data, status_code, headers = api_instance.apply_add_on_with_http_info(applied_add_on_input)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <AppliedAddOn>
-rescue LagoAPI::ApiError => e
-  puts "Error when calling AddOnsApi->apply_add_on_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **applied_add_on_input** | [**AppliedAddOnInput**](AppliedAddOnInput.md) | Apply add-on payload |  |
-
-### Return type
-
-[**AppliedAddOn**](AppliedAddOn.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
 
 
 ## create_add_on
