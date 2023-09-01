@@ -30,6 +30,7 @@ module LagoAPI
     # This field captures the Unix timestamp in seconds indicating the occurrence of the event in Coordinated Universal Time (UTC). If this timestamp is not provided, the API will automatically set it to the time of event reception.
     attr_accessor :timestamp
 
+    # This field represents additional properties associated with the event, which are utilized in the calculation of the final fee. This object becomes mandatory when the targeted billable metric employs a `sum_agg`, `max_agg`, or `unique_count_agg` aggregation method. However, when using a simple `count_agg`, this object is not required.
     attr_accessor :properties
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -57,7 +58,7 @@ module LagoAPI
         :'external_subscription_id' => :'String',
         :'code' => :'String',
         :'timestamp' => :'Integer',
-        :'properties' => :'EventInputEventProperties'
+        :'properties' => :'Hash<String, String>'
       }
     end
 
@@ -107,7 +108,9 @@ module LagoAPI
       end
 
       if attributes.key?(:'properties')
-        self.properties = attributes[:'properties']
+        if (value = attributes[:'properties']).is_a?(Hash)
+          self.properties = value
+        end
       end
     end
 
