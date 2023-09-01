@@ -103,6 +103,7 @@ docs/EventEstimateFeesInputEvent.md
 docs/EventInput.md
 docs/EventInputEvent.md
 docs/EventObject.md
+docs/EventObjectProperties.md
 docs/EventsApi.md
 docs/Fee.md
 docs/FeeAppliedTaxObject.md
@@ -297,6 +298,7 @@ lib/lago_ruby/models/event_estimate_fees_input_event.rb
 lib/lago_ruby/models/event_input.rb
 lib/lago_ruby/models/event_input_event.rb
 lib/lago_ruby/models/event_object.rb
+lib/lago_ruby/models/event_object_properties.rb
 lib/lago_ruby/models/fee.rb
 lib/lago_ruby/models/fee_applied_tax_object.rb
 lib/lago_ruby/models/fee_object.rb
@@ -371,4 +373,5 @@ lib/lago_ruby/models/wallets_paginated.rb
 lib/lago_ruby/version.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
+spec/models/event_object_properties_spec.rb
 spec/spec_helper.rb
