@@ -256,6 +256,7 @@ Class | Method | HTTP request | Description
  - [LagoAPI::EventInputEvent](docs/EventInputEvent.md)
  - [LagoAPI::EventInputEventProperties](docs/EventInputEventProperties.md)
  - [LagoAPI::EventObject](docs/EventObject.md)
+ - [LagoAPI::EventObjectProperties](docs/EventObjectProperties.md)
  - [LagoAPI::Fee](docs/Fee.md)
  - [LagoAPI::FeeAppliedTaxObject](docs/FeeAppliedTaxObject.md)
  - [LagoAPI::FeeObject](docs/FeeObject.md)

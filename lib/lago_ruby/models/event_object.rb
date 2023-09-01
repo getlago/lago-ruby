@@ -74,7 +74,7 @@ module LagoAPI
         :'external_customer_id' => :'String',
         :'code' => :'String',
         :'timestamp' => :'Time',
-        :'properties' => :'EventInputEventProperties',
+        :'properties' => :'EventObjectProperties',
         :'lago_subscription_id' => :'String',
         :'external_subscription_id' => :'String',
         :'created_at' => :'Time'

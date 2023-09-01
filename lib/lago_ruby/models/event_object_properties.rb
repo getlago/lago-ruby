@@ -15,9 +15,31 @@ require 'time'
 
 module LagoAPI
   # This field represents additional properties associated with the event, which are utilized in the calculation of the final fee. This object becomes mandatory when the targeted billable metric employs a `sum_agg`, `max_agg`, or `unique_count_agg` aggregation method. However, when using a simple `count_agg`, this object is not required.
-  class EventInputEventProperties
+  class EventObjectProperties
     # The `operation_type` field is only necessary when adding or removing a specific unit when the targeted billable metric adopts a `unique_count_agg` aggregation method. In other cases, the `operation_type` field is not required. The valid values for the `operation_type` field are `add` or `remove`, which indicate whether the unit is being added or removed from the unique count aggregation, respectively.
     attr_accessor :operation_type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -48,13 +70,13 @@ module LagoAPI
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `LagoAPI::EventInputEventProperties` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `LagoAPI::EventObjectProperties` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `LagoAPI::EventInputEventProperties`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `LagoAPI::EventObjectProperties`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -76,7 +98,19 @@ module LagoAPI
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      operation_type_validator = EnumAttributeValidator.new('String', ["add", "remove"])
+      return false unless operation_type_validator.valid?(@operation_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] operation_type Object to be assigned
+    def operation_type=(operation_type)
+      validator = EnumAttributeValidator.new('String', ["add", "remove"])
+      unless validator.valid?(operation_type)
+        fail ArgumentError, "invalid value for \"operation_type\", must be one of #{validator.allowable_values}."
+      end
+      @operation_type = operation_type
     end
 
     # Checks equality by comparing each attribute.
