@@ -57,7 +57,7 @@ module LagoAPI
         :'external_subscription_id' => :'String',
         :'code' => :'String',
         :'timestamp' => :'Integer',
-        :'properties' => :'EventBatchInputEventProperties'
+        :'properties' => :'EventInputEventProperties'
       }
     end
 

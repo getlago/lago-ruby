@@ -68,14 +68,14 @@ LagoAPI.configure do |config|
 end
 
 api_instance = LagoAPI::AddOnsApi.new
-applied_add_on_input = LagoAPI::AppliedAddOnInput.new({applied_add_on: LagoAPI::AppliedAddOnInputAppliedAddOn.new({external_customer_id: '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba', add_on_code: 'setup_fee'})}) # AppliedAddOnInput | Apply add-on payload
+add_on_create_input = LagoAPI::AddOnCreateInput.new({add_on: LagoAPI::AddOnCreateInputAddOn.new({name: 'Setup Fee', code: 'setup_fee', amount_cents: 50000, amount_currency: LagoAPI::Currency::AED})}) # AddOnCreateInput | Add-on payload
 
 begin
-  #Apply an add-on to a customer
-  result = api_instance.apply_add_on(applied_add_on_input)
+  #Create an add-on
+  result = api_instance.create_add_on(add_on_create_input)
   p result
 rescue LagoAPI::ApiError => e
-  puts "Exception when calling AddOnsApi->apply_add_on: #{e}"
+  puts "Exception when calling AddOnsApi->create_add_on: #{e}"
 end
 
 ```
@@ -88,7 +88,6 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*LagoAPI::AddOnsApi* | [**apply_add_on**](docs/AddOnsApi.md#apply_add_on) | **POST** /applied_add_ons | Apply an add-on to a customer
 *LagoAPI::AddOnsApi* | [**create_add_on**](docs/AddOnsApi.md#create_add_on) | **POST** /add_ons | Create an add-on
 *LagoAPI::AddOnsApi* | [**destroy_add_on**](docs/AddOnsApi.md#destroy_add_on) | **DELETE** /add_ons/{code} | Delete an add-on
 *LagoAPI::AddOnsApi* | [**find_add_on**](docs/AddOnsApi.md#find_add_on) | **GET** /add_ons/{code} | Retrieve an add-on
@@ -181,10 +180,6 @@ Class | Method | HTTP request | Description
  - [LagoAPI::ApiErrorNotFound](docs/ApiErrorNotFound.md)
  - [LagoAPI::ApiErrorUnauthorized](docs/ApiErrorUnauthorized.md)
  - [LagoAPI::ApiErrorUnprocessableEntity](docs/ApiErrorUnprocessableEntity.md)
- - [LagoAPI::AppliedAddOn](docs/AppliedAddOn.md)
- - [LagoAPI::AppliedAddOnInput](docs/AppliedAddOnInput.md)
- - [LagoAPI::AppliedAddOnInputAppliedAddOn](docs/AppliedAddOnInputAppliedAddOn.md)
- - [LagoAPI::AppliedAddOnObject](docs/AppliedAddOnObject.md)
  - [LagoAPI::AppliedCoupon](docs/AppliedCoupon.md)
  - [LagoAPI::AppliedCouponInput](docs/AppliedCouponInput.md)
  - [LagoAPI::AppliedCouponInputAppliedCoupon](docs/AppliedCouponInputAppliedCoupon.md)
@@ -259,8 +254,8 @@ Class | Method | HTTP request | Description
  - [LagoAPI::EventEstimateFeesInputEvent](docs/EventEstimateFeesInputEvent.md)
  - [LagoAPI::EventInput](docs/EventInput.md)
  - [LagoAPI::EventInputEvent](docs/EventInputEvent.md)
+ - [LagoAPI::EventInputEventProperties](docs/EventInputEventProperties.md)
  - [LagoAPI::EventObject](docs/EventObject.md)
- - [LagoAPI::EventObjectProperties](docs/EventObjectProperties.md)
  - [LagoAPI::Fee](docs/Fee.md)
  - [LagoAPI::FeeAppliedTaxObject](docs/FeeAppliedTaxObject.md)
  - [LagoAPI::FeeObject](docs/FeeObject.md)
