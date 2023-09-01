@@ -14,13 +14,37 @@ require 'date'
 require 'time'
 
 module LagoAPI
-  class CustomerCreateInput
-    attr_accessor :customer
+  # This field represents additional properties associated with the event, which are utilized in the calculation of the final fee. This object becomes mandatory when the targeted billable metric employs a `sum_agg`, `max_agg`, or `unique_count_agg` aggregation method. However, when using a simple `count_agg`, this object is not required.
+  class EventObjectProperties
+    # The `operation_type` field is only necessary when adding or removing a specific unit when the targeted billable metric adopts a `unique_count_agg` aggregation method. In other cases, the `operation_type` field is not required. The valid values for the `operation_type` field are `add` or `remove`, which indicate whether the unit is being added or removed from the unique count aggregation, respectively.
+    attr_accessor :operation_type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.include?(value)
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'customer' => :'customer'
+        :'operation_type' => :'operation_type'
       }
     end
 
@@ -32,7 +56,7 @@ module LagoAPI
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'customer' => :'CustomerCreateInputCustomer'
+        :'operation_type' => :'String'
       }
     end
 
@@ -46,21 +70,19 @@ module LagoAPI
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `LagoAPI::CustomerCreateInput` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `LagoAPI::EventObjectProperties` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `LagoAPI::CustomerCreateInput`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `LagoAPI::EventObjectProperties`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'customer')
-        self.customer = attributes[:'customer']
-      else
-        self.customer = nil
+      if attributes.key?(:'operation_type')
+        self.operation_type = attributes[:'operation_type']
       end
     end
 
@@ -69,10 +91,6 @@ module LagoAPI
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @customer.nil?
-        invalid_properties.push('invalid value for "customer", customer cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -80,8 +98,19 @@ module LagoAPI
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @customer.nil?
+      operation_type_validator = EnumAttributeValidator.new('String', ["add", "remove"])
+      return false unless operation_type_validator.valid?(@operation_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] operation_type Object to be assigned
+    def operation_type=(operation_type)
+      validator = EnumAttributeValidator.new('String', ["add", "remove"])
+      unless validator.valid?(operation_type)
+        fail ArgumentError, "invalid value for \"operation_type\", must be one of #{validator.allowable_values}."
+      end
+      @operation_type = operation_type
     end
 
     # Checks equality by comparing each attribute.
@@ -89,7 +118,7 @@ module LagoAPI
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          customer == o.customer
+          operation_type == o.operation_type
     end
 
     # @see the `==` method
@@ -101,7 +130,7 @@ module LagoAPI
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [customer].hash
+      [operation_type].hash
     end
 
     # Builds the object from hash
