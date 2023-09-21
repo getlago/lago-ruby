@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lago_ruby (0.46.1.pre.beta)
+    lago_ruby (0.48.0.pre.beta)
       typhoeus (~> 1.0, >= 1.0.1)
 
 GEM

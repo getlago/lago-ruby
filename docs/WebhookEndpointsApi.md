@@ -13,7 +13,7 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 
 ## create_webhook_endpoint
 
-> <CreateWebhookEndpoint200Response> create_webhook_endpoint(create_webhook_endpoint_request)
+> <WebhookEndpoint> create_webhook_endpoint(webhook_endpoint_create_input)
 
 Create a webhook_endpoint
 
@@ -31,11 +31,11 @@ LagoAPI.configure do |config|
 end
 
 api_instance = LagoAPI::WebhookEndpointsApi.new
-create_webhook_endpoint_request = LagoAPI::CreateWebhookEndpointRequest.new # CreateWebhookEndpointRequest | Webhook Endpoint payload
+webhook_endpoint_create_input = LagoAPI::WebhookEndpointCreateInput.new # WebhookEndpointCreateInput | Webhook Endpoint payload
 
 begin
   # Create a webhook_endpoint
-  result = api_instance.create_webhook_endpoint(create_webhook_endpoint_request)
+  result = api_instance.create_webhook_endpoint(webhook_endpoint_create_input)
   p result
 rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->create_webhook_endpoint: #{e}"
@@ -46,15 +46,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CreateWebhookEndpoint200Response>, Integer, Hash)> create_webhook_endpoint_with_http_info(create_webhook_endpoint_request)
+> <Array(<WebhookEndpoint>, Integer, Hash)> create_webhook_endpoint_with_http_info(webhook_endpoint_create_input)
 
 ```ruby
 begin
   # Create a webhook_endpoint
-  data, status_code, headers = api_instance.create_webhook_endpoint_with_http_info(create_webhook_endpoint_request)
+  data, status_code, headers = api_instance.create_webhook_endpoint_with_http_info(webhook_endpoint_create_input)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CreateWebhookEndpoint200Response>
+  p data # => <WebhookEndpoint>
 rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->create_webhook_endpoint_with_http_info: #{e}"
 end
@@ -64,11 +64,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **create_webhook_endpoint_request** | [**CreateWebhookEndpointRequest**](CreateWebhookEndpointRequest.md) | Webhook Endpoint payload |  |
+| **webhook_endpoint_create_input** | [**WebhookEndpointCreateInput**](WebhookEndpointCreateInput.md) | Webhook Endpoint payload |  |
 
 ### Return type
 
-[**CreateWebhookEndpoint200Response**](CreateWebhookEndpoint200Response.md)
+[**WebhookEndpoint**](WebhookEndpoint.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ end
 
 ## destroy_webhook_endpoint
 
-> Object destroy_webhook_endpoint(lago_id)
+> <WebhookEndpoint> destroy_webhook_endpoint(lago_id)
 
 Delete a webhook endpoint
 
@@ -115,7 +115,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> destroy_webhook_endpoint_with_http_info(lago_id)
+> <Array(<WebhookEndpoint>, Integer, Hash)> destroy_webhook_endpoint_with_http_info(lago_id)
 
 ```ruby
 begin
@@ -123,7 +123,7 @@ begin
   data, status_code, headers = api_instance.destroy_webhook_endpoint_with_http_info(lago_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <WebhookEndpoint>
 rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->destroy_webhook_endpoint_with_http_info: #{e}"
 end
@@ -137,7 +137,7 @@ end
 
 ### Return type
 
-**Object**
+[**WebhookEndpoint**](WebhookEndpoint.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ end
 
 ## find_all_webhook_endpoints
 
-> <FindAllWebhookEndpoints200Response> find_all_webhook_endpoints(opts)
+> <WebhookEndpointsPaginated> find_all_webhook_endpoints(opts)
 
 List all webhook endpoints
 
@@ -187,7 +187,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<FindAllWebhookEndpoints200Response>, Integer, Hash)> find_all_webhook_endpoints_with_http_info(opts)
+> <Array(<WebhookEndpointsPaginated>, Integer, Hash)> find_all_webhook_endpoints_with_http_info(opts)
 
 ```ruby
 begin
@@ -195,7 +195,7 @@ begin
   data, status_code, headers = api_instance.find_all_webhook_endpoints_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <FindAllWebhookEndpoints200Response>
+  p data # => <WebhookEndpointsPaginated>
 rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->find_all_webhook_endpoints_with_http_info: #{e}"
 end
@@ -210,7 +210,7 @@ end
 
 ### Return type
 
-[**FindAllWebhookEndpoints200Response**](FindAllWebhookEndpoints200Response.md)
+[**WebhookEndpointsPaginated**](WebhookEndpointsPaginated.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ end
 
 ## find_webhook_endpoint
 
-> Object find_webhook_endpoint(lago_id)
+> <WebhookEndpoint> find_webhook_endpoint(lago_id)
 
 Retrieve a webhook endpoint
 
@@ -257,7 +257,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> find_webhook_endpoint_with_http_info(lago_id)
+> <Array(<WebhookEndpoint>, Integer, Hash)> find_webhook_endpoint_with_http_info(lago_id)
 
 ```ruby
 begin
@@ -265,7 +265,7 @@ begin
   data, status_code, headers = api_instance.find_webhook_endpoint_with_http_info(lago_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <WebhookEndpoint>
 rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->find_webhook_endpoint_with_http_info: #{e}"
 end
@@ -279,7 +279,7 @@ end
 
 ### Return type
 
-**Object**
+[**WebhookEndpoint**](WebhookEndpoint.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ end
 
 ## update_webhook_endpoint
 
-> Object update_webhook_endpoint(lago_id, create_webhook_endpoint_request)
+> <WebhookEndpoint> update_webhook_endpoint(lago_id, webhook_endpoint_update_input)
 
 Update a webhook endpoint
 
@@ -312,11 +312,11 @@ end
 
 api_instance = LagoAPI::WebhookEndpointsApi.new
 lago_id = '1a901a90-1a90-1a90-1a90-1a901a901a90' # String | Unique identifier assigned to the webhook endpoint within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the webhook endpoint's record within the Lago system.
-create_webhook_endpoint_request = LagoAPI::CreateWebhookEndpointRequest.new # CreateWebhookEndpointRequest | Webhook Endpoint update payload
+webhook_endpoint_update_input = LagoAPI::WebhookEndpointUpdateInput.new # WebhookEndpointUpdateInput | Webhook Endpoint update payload
 
 begin
   # Update a webhook endpoint
-  result = api_instance.update_webhook_endpoint(lago_id, create_webhook_endpoint_request)
+  result = api_instance.update_webhook_endpoint(lago_id, webhook_endpoint_update_input)
   p result
 rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->update_webhook_endpoint: #{e}"
@@ -327,15 +327,15 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Object, Integer, Hash)> update_webhook_endpoint_with_http_info(lago_id, create_webhook_endpoint_request)
+> <Array(<WebhookEndpoint>, Integer, Hash)> update_webhook_endpoint_with_http_info(lago_id, webhook_endpoint_update_input)
 
 ```ruby
 begin
   # Update a webhook endpoint
-  data, status_code, headers = api_instance.update_webhook_endpoint_with_http_info(lago_id, create_webhook_endpoint_request)
+  data, status_code, headers = api_instance.update_webhook_endpoint_with_http_info(lago_id, webhook_endpoint_update_input)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => Object
+  p data # => <WebhookEndpoint>
 rescue LagoAPI::ApiError => e
   puts "Error when calling WebhookEndpointsApi->update_webhook_endpoint_with_http_info: #{e}"
 end
@@ -346,11 +346,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **lago_id** | **String** | Unique identifier assigned to the webhook endpoint within the Lago application. This ID is exclusively created by Lago and serves as a unique identifier for the webhook endpoint&#39;s record within the Lago system. |  |
-| **create_webhook_endpoint_request** | [**CreateWebhookEndpointRequest**](CreateWebhookEndpointRequest.md) | Webhook Endpoint update payload |  |
+| **webhook_endpoint_update_input** | [**WebhookEndpointUpdateInput**](WebhookEndpointUpdateInput.md) | Webhook Endpoint update payload |  |
 
 ### Return type
 
-**Object**
+[**WebhookEndpoint**](WebhookEndpoint.md)
 
 ### Authorization
 
