@@ -15,6 +15,7 @@
 | **created_at** | **Time** | The creation date of the subscription, represented in ISO 8601 datetime format and expressed in Coordinated Universal Time (UTC). This date provides a timestamp indicating when the subscription was initially created. |  |
 | **canceled_at** | **Time** | The cancellation date of the subscription. This field is not null when the subscription is &#x60;canceled&#x60;. This date should be provided in ISO 8601 datetime format and expressed in Coordinated Universal Time (UTC). | [optional] |
 | **started_at** | **Time** | The effective start date of the subscription. This field can be null if the subscription is &#x60;pending&#x60; or &#x60;canceled&#x60;. This date should be provided in ISO 8601 datetime format and expressed in Coordinated Universal Time (UTC). | [optional] |
+| **ending_at** | **Time** | The effective end date of the subscription. If this field is set to null, the subscription will automatically renew. This date should be provided in ISO 8601 datetime format, and use Coordinated Universal Time (UTC). | [optional] |
 | **subscription_at** | **Time** | The anniversary date and time of the initial subscription. This date serves as the basis for billing subscriptions with &#x60;anniversary&#x60; billing time. The &#x60;anniversary_date&#x60; should be provided in ISO 8601 datetime format and expressed in Coordinated Universal Time (UTC). |  |
 | **terminated_at** | **Time** | The termination date of the subscription. This field is not null when the subscription is &#x60;terminated&#x60;. This date should be provided in ISO 8601 datetime format and expressed in Coordinated Universal Time (UTC) | [optional] |
 | **previous_plan_code** | **String** | The code identifying the previous plan associated with this subscription. | [optional] |
@@ -38,6 +39,7 @@ instance = LagoAPI::SubscriptionObject.new(
   created_at: 2022-08-08T00:00Z,
   canceled_at: 2022-09-14T16:35:31Z,
   started_at: 2022-08-08T00:00Z,
+  ending_at: 2022-10-08T00:00Z,
   subscription_at: 2022-08-08T00:00Z,
   terminated_at: 2022-09-14T16:35:31Z,
   previous_plan_code: null,

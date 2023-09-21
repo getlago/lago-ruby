@@ -22,6 +22,7 @@
 | **expiration** | **String** | Specifies the type of expiration for the coupon. It can have two possible values: &#x60;time_limit&#x60; or &#x60;no_expiration&#x60;.  - If set to &#x60;time_limit&#x60;, the coupon has an expiration based on a specified time limit. - If set to &#x60;no_expiration&#x60;, the coupon does not have an expiration date and remains valid indefinitely. |  |
 | **expiration_at** | **Time** | The expiration date and time of the coupon. This field is required only for coupons with &#x60;expiration&#x60; set to &#x60;time_limit&#x60;. The expiration date and time should be specified in UTC format according to the ISO 8601 datetime standard. It indicates the exact moment when the coupon will expire and is no longer valid. | [optional] |
 | **created_at** | **Time** | The date and time when the coupon was created. It is expressed in UTC format according to the ISO 8601 datetime standard. This field provides the timestamp for the exact moment when the coupon was initially created. |  |
+| **terminated_at** | **Time** | This field indicates if the coupon has been terminated and is no longer usable. If it&#39;s not null, it won&#39;t be removed for existing customers using it, but it prevents the coupon from being applied in the future. | [optional] |
 
 ## Example
 
@@ -46,7 +47,8 @@ instance = LagoAPI::CouponObject.new(
   frequency_duration: 6,
   expiration: time_limit,
   expiration_at: 2022-08-08T23:59:59Z,
-  created_at: 2022-04-29T08:59:51Z
+  created_at: 2022-04-29T08:59:51Z,
+  terminated_at: 2022-08-08T23:59:59Z
 )
 ```
 
