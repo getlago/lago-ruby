@@ -14,36 +14,16 @@ require 'date'
 require 'time'
 
 module LagoAPI
-  class CreditNoteUpdateInputCreditNote
-    # The status of the refund portion of the credit note. It indicates the current state or condition of the refund associated with the credit note. The possible values for this field are:  - `pending`: this status indicates that the refund is pending execution. The refund request has been initiated but has not been processed or completed yet. - `succeeded`: this status indicates that the refund has been successfully executed. The refund amount has been processed and returned to the customer or the designated recipient. - `failed`: this status indicates that the refund failed to execute. The refund request encountered an error or unsuccessful processing, and the refund amount could not be returned.
-    attr_accessor :refund_status
+  class CustomerPastUsage
+    attr_accessor :usage_periods
 
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.include?(value)
-      end
-    end
+    attr_accessor :meta
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'refund_status' => :'refund_status'
+        :'usage_periods' => :'usage_periods',
+        :'meta' => :'meta'
       }
     end
 
@@ -55,7 +35,8 @@ module LagoAPI
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'refund_status' => :'String'
+        :'usage_periods' => :'Array<CustomerUsage>',
+        :'meta' => :'PaginationMeta'
       }
     end
 
@@ -69,21 +50,29 @@ module LagoAPI
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `LagoAPI::CreditNoteUpdateInputCreditNote` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `LagoAPI::CustomerPastUsage` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `LagoAPI::CreditNoteUpdateInputCreditNote`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `LagoAPI::CustomerPastUsage`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'refund_status')
-        self.refund_status = attributes[:'refund_status']
+      if attributes.key?(:'usage_periods')
+        if (value = attributes[:'usage_periods']).is_a?(Array)
+          self.usage_periods = value
+        end
       else
-        self.refund_status = nil
+        self.usage_periods = nil
+      end
+
+      if attributes.key?(:'meta')
+        self.meta = attributes[:'meta']
+      else
+        self.meta = nil
       end
     end
 
@@ -92,8 +81,12 @@ module LagoAPI
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @refund_status.nil?
-        invalid_properties.push('invalid value for "refund_status", refund_status cannot be nil.')
+      if @usage_periods.nil?
+        invalid_properties.push('invalid value for "usage_periods", usage_periods cannot be nil.')
+      end
+
+      if @meta.nil?
+        invalid_properties.push('invalid value for "meta", meta cannot be nil.')
       end
 
       invalid_properties
@@ -103,20 +96,9 @@ module LagoAPI
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @refund_status.nil?
-      refund_status_validator = EnumAttributeValidator.new('String', ["pending", "succeeded", "failed"])
-      return false unless refund_status_validator.valid?(@refund_status)
+      return false if @usage_periods.nil?
+      return false if @meta.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] refund_status Object to be assigned
-    def refund_status=(refund_status)
-      validator = EnumAttributeValidator.new('String', ["pending", "succeeded", "failed"])
-      unless validator.valid?(refund_status)
-        fail ArgumentError, "invalid value for \"refund_status\", must be one of #{validator.allowable_values}."
-      end
-      @refund_status = refund_status
     end
 
     # Checks equality by comparing each attribute.
@@ -124,7 +106,8 @@ module LagoAPI
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          refund_status == o.refund_status
+          usage_periods == o.usage_periods &&
+          meta == o.meta
     end
 
     # @see the `==` method
@@ -136,7 +119,7 @@ module LagoAPI
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [refund_status].hash
+      [usage_periods, meta].hash
     end
 
     # Builds the object from hash

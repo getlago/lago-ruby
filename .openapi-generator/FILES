@@ -82,6 +82,7 @@ docs/CustomerCreateInputCustomerMetadataInner.md
 docs/CustomerMetadata.md
 docs/CustomerObject.md
 docs/CustomerObjectExtended.md
+docs/CustomerPastUsage.md
 docs/CustomerUsage.md
 docs/CustomerUsageObject.md
 docs/CustomersApi.md
@@ -276,6 +277,7 @@ lib/lago_ruby/models/customer_create_input_customer_metadata_inner.rb
 lib/lago_ruby/models/customer_metadata.rb
 lib/lago_ruby/models/customer_object.rb
 lib/lago_ruby/models/customer_object_extended.rb
+lib/lago_ruby/models/customer_past_usage.rb
 lib/lago_ruby/models/customer_usage.rb
 lib/lago_ruby/models/customer_usage_object.rb
 lib/lago_ruby/models/customers_paginated.rb
@@ -369,11 +371,5 @@ lib/lago_ruby/models/webhook_endpoints_paginated.rb
 lib/lago_ruby/version.rb
 spec/api_client_spec.rb
 spec/configuration_spec.rb
-spec/models/event_input_event_timestamp_spec.rb
-spec/models/webhook_endpoint_create_input_spec.rb
-spec/models/webhook_endpoint_create_input_webhook_endpoint_spec.rb
-spec/models/webhook_endpoint_object_spec.rb
-spec/models/webhook_endpoint_spec.rb
-spec/models/webhook_endpoint_update_input_spec.rb
-spec/models/webhook_endpoints_paginated_spec.rb
+spec/models/customer_past_usage_spec.rb
 spec/spec_helper.rb

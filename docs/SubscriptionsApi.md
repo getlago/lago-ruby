@@ -7,6 +7,7 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 | [**create_subscription**](SubscriptionsApi.md#create_subscription) | **POST** /subscriptions | Assign a plan to a customer |
 | [**destroy_subscription**](SubscriptionsApi.md#destroy_subscription) | **DELETE** /subscriptions/{external_id} | Terminate a subscription |
 | [**find_all_subscriptions**](SubscriptionsApi.md#find_all_subscriptions) | **GET** /subscriptions | List all subscriptions |
+| [**find_subscription**](SubscriptionsApi.md#find_subscription) | **GET** /subscriptions/{external_id} | Retrieve a subscription |
 | [**update_subscription**](SubscriptionsApi.md#update_subscription) | **PUT** /subscriptions/{external_id} | Update a subscription |
 
 
@@ -220,6 +221,75 @@ end
 ### Return type
 
 [**SubscriptionsPaginated**](SubscriptionsPaginated.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## find_subscription
+
+> <Subscription> find_subscription(external_id)
+
+Retrieve a subscription
+
+This endpoint retrieves a specific subscription.
+
+### Examples
+
+```ruby
+require 'time'
+require 'lago_ruby'
+# setup authorization
+LagoAPI.configure do |config|
+  # Configure Bearer authorization: bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = LagoAPI::SubscriptionsApi.new
+external_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | External ID of the existing subscription
+
+begin
+  # Retrieve a subscription
+  result = api_instance.find_subscription(external_id)
+  p result
+rescue LagoAPI::ApiError => e
+  puts "Error when calling SubscriptionsApi->find_subscription: #{e}"
+end
+```
+
+#### Using the find_subscription_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Subscription>, Integer, Hash)> find_subscription_with_http_info(external_id)
+
+```ruby
+begin
+  # Retrieve a subscription
+  data, status_code, headers = api_instance.find_subscription_with_http_info(external_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Subscription>
+rescue LagoAPI::ApiError => e
+  puts "Error when calling SubscriptionsApi->find_subscription_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **external_id** | **String** | External ID of the existing subscription |  |
+
+### Return type
+
+[**Subscription**](Subscription.md)
 
 ### Authorization
 
