@@ -7,6 +7,7 @@
 | **lago_id** | **String** | Unique identifier of charge, created by Lago. |  |
 | **lago_billable_metric_id** | **String** | Unique identifier of the billable metric created by Lago. |  |
 | **billable_metric_code** | **String** | Unique code identifying a billable metric. |  |
+| **invoice_display_name** | **String** | Specifies the name that will be displayed on an invoice. If no value is set for this field, the name of the actual charge will be used as the default display name. | [optional] |
 | **created_at** | **Time** | The date and time when the charge was created. It is expressed in UTC format according to the ISO 8601 datetime standard. |  |
 | **charge_model** | **String** | Specifies the pricing model used for the calculation of the final fee. It can be &#x60;standard&#x60;, &#x60;graduated&#x60;, &#x60;graduated_percentage&#x60;, &#x60;package&#x60;, &#x60;percentage&#x60; or &#x60;volume&#x60;. |  |
 | **pay_in_advance** | **Boolean** | This field determines the billing timing for this specific usage-based charge. When set to &#x60;true&#x60;, the charge is due and invoiced immediately. Conversely, when set to &#x60;false&#x60;, the charge is due and invoiced at the end of each billing period. | [optional] |
@@ -26,6 +27,7 @@ instance = LagoAPI::ChargeObject.new(
   lago_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   lago_billable_metric_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   billable_metric_code: requests,
+  invoice_display_name: Setup,
   created_at: 2022-09-14T16:35:31Z,
   charge_model: null,
   pay_in_advance: true,

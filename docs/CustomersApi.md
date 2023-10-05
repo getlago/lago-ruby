@@ -7,6 +7,7 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 | [**create_customer**](CustomersApi.md#create_customer) | **POST** /customers | Create a customer |
 | [**delete_applied_coupon**](CustomersApi.md#delete_applied_coupon) | **DELETE** /customers/{external_customer_id}/applied_coupons/{applied_coupon_id} | Delete an applied coupon |
 | [**destroy_customer**](CustomersApi.md#destroy_customer) | **DELETE** /customers/{external_id} | Delete a customer |
+| [**find_all_customer_past_usage**](CustomersApi.md#find_all_customer_past_usage) | **GET** /customers/{external_customer_id}/past_usage | Retrieve customer past usage |
 | [**find_all_customers**](CustomersApi.md#find_all_customers) | **GET** /customers | List all customers |
 | [**find_customer**](CustomersApi.md#find_customer) | **GET** /customers/{external_id} | Retrieve a customer |
 | [**find_customer_current_usage**](CustomersApi.md#find_customer_current_usage) | **GET** /customers/{external_customer_id}/current_usage | Retrieve customer current usage |
@@ -211,6 +212,87 @@ end
 ### Return type
 
 [**Customer**](Customer.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## find_all_customer_past_usage
+
+> <CustomerPastUsage> find_all_customer_past_usage(external_customer_id, external_subscription_id, opts)
+
+Retrieve customer past usage
+
+This endpoint enables the retrieval of the usage-based billing data for a customer within past periods.
+
+### Examples
+
+```ruby
+require 'time'
+require 'lago_ruby'
+# setup authorization
+LagoAPI.configure do |config|
+  # Configure Bearer authorization: bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = LagoAPI::CustomersApi.new
+external_customer_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | The customer external unique identifier (provided by your own application).
+external_subscription_id = 'sub_1234567890' # String | The unique identifier of the subscription within your application.
+opts = {
+  page: 1, # Integer | Page number.
+  per_page: 20, # Integer | Number of records per page.
+  billable_metric_code: 'cpu', # String | Billable metric code filter to apply to the charge usage
+  periods_count: 5 # Integer | Number of past billing period to returns in the result
+}
+
+begin
+  # Retrieve customer past usage
+  result = api_instance.find_all_customer_past_usage(external_customer_id, external_subscription_id, opts)
+  p result
+rescue LagoAPI::ApiError => e
+  puts "Error when calling CustomersApi->find_all_customer_past_usage: #{e}"
+end
+```
+
+#### Using the find_all_customer_past_usage_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CustomerPastUsage>, Integer, Hash)> find_all_customer_past_usage_with_http_info(external_customer_id, external_subscription_id, opts)
+
+```ruby
+begin
+  # Retrieve customer past usage
+  data, status_code, headers = api_instance.find_all_customer_past_usage_with_http_info(external_customer_id, external_subscription_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CustomerPastUsage>
+rescue LagoAPI::ApiError => e
+  puts "Error when calling CustomersApi->find_all_customer_past_usage_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **external_customer_id** | **String** | The customer external unique identifier (provided by your own application). |  |
+| **external_subscription_id** | **String** | The unique identifier of the subscription within your application. |  |
+| **page** | **Integer** | Page number. | [optional] |
+| **per_page** | **Integer** | Number of records per page. | [optional] |
+| **billable_metric_code** | **String** | Billable metric code filter to apply to the charge usage | [optional] |
+| **periods_count** | **Integer** | Number of past billing period to returns in the result | [optional] |
+
+### Return type
+
+[**CustomerPastUsage**](CustomerPastUsage.md)
 
 ### Authorization
 

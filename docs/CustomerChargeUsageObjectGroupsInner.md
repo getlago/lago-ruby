@@ -8,6 +8,7 @@
 | **key** | **String** | The group key, only returned for groups with two dimensions. | [optional] |
 | **value** | **String** | The group value. | [optional] |
 | **units** | **String** | The number of units consumed for a specific group related to a charge item. | [optional] |
+| **events_count** | **Integer** | The quantity of usage events that have been recorded for a particular charge during the specified time period. These events may also be referred to as the number of transactions in some contexts. | [optional] |
 | **amount_cents** | **Integer** | The amount in cents, tax excluded, consumed for a specific group related to a charge item. | [optional] |
 
 ## Example
@@ -20,6 +21,7 @@ instance = LagoAPI::CustomerChargeUsageObjectGroupsInner.new(
   key: null,
   value: europe,
   units: 0.9,
+  events_count: 10,
   amount_cents: 1000
 )
 ```

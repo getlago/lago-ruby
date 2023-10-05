@@ -13,6 +13,7 @@
 | **lago_customer_id** | **String** | Unique identifier assigned to the customer, created by Lago. This field is specifically displayed when the fee type is charge and the payment for the fee is made in advance (&#x60;pay_in_advance&#x60; is set to true). | [optional] |
 | **external_customer_id** | **String** | Unique identifier assigned to the customer in your application. This field is specifically displayed when the fee type is charge and the payment for the fee is made in advance (&#x60;pay_in_advance&#x60; is set to true). | [optional] |
 | **external_subscription_id** | **String** | Unique identifier assigned to the subscription in your application. This field is specifically displayed when the fee type is charge and the payment for the fee is made in advance (&#x60;pay_in_advance&#x60; is set to true). | [optional] |
+| **invoice_display_name** | **String** | Specifies the name that will be displayed on an invoice. If no value is set for this field, the name of the actual charge will be used as the default display name. | [optional] |
 | **amount_cents** | **Integer** | The cost of this specific fee, excluding any applicable taxes. |  |
 | **amount_currency** | [**Currency**](Currency.md) |  |  |
 | **taxes_amount_cents** | **Integer** | The cost of the tax associated with this specific fee. |  |
@@ -49,6 +50,7 @@ instance = LagoAPI::FeeObject.new(
   lago_customer_id: 1a901a90-1a90-1a90-1a90-1a901a901a90,
   external_customer_id: external_id,
   external_subscription_id: external_id,
+  invoice_display_name: Setup Fee (SF1),
   amount_cents: 100,
   amount_currency: null,
   taxes_amount_cents: 20,
