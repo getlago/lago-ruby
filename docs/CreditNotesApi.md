@@ -6,6 +6,7 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 | ------ | ------------ | ----------- |
 | [**create_credit_note**](CreditNotesApi.md#create_credit_note) | **POST** /credit_notes | Create a credit note |
 | [**download_credit_note**](CreditNotesApi.md#download_credit_note) | **POST** /credit_notes/{lago_id}/download | Download a credit note PDF |
+| [**estimate_credit_note**](CreditNotesApi.md#estimate_credit_note) | **POST** /credit_notes/estimate | Estimate amounts for a new credit note |
 | [**find_all_credit_notes**](CreditNotesApi.md#find_all_credit_notes) | **GET** /credit_notes | List all credit notes |
 | [**find_credit_note**](CreditNotesApi.md#find_credit_note) | **GET** /credit_notes/{lago_id} | Retrieve a credit note |
 | [**update_credit_note**](CreditNotesApi.md#update_credit_note) | **PUT** /credit_notes/{lago_id} | Update a credit note |
@@ -147,6 +148,77 @@ end
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## estimate_credit_note
+
+> <CreditNoteEstimated> estimate_credit_note(opts)
+
+Estimate amounts for a new credit note
+
+This endpoint allows you to retrieve amounts for a new credit note creation.
+
+### Examples
+
+```ruby
+require 'time'
+require 'lago_ruby'
+# setup authorization
+LagoAPI.configure do |config|
+  # Configure Bearer authorization: bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = LagoAPI::CreditNotesApi.new
+opts = {
+  credit_note_estimate_input: LagoAPI::CreditNoteEstimateInput.new({credit_note: LagoAPI::CreditNoteEstimateInputCreditNote.new({invoice_id: '1a901a90-1a90-1a90-1a90-1a901a901a90', items: [{"fee_id": "1a901a90-1a90-1a90-1a90-1a901a901a90", "amount_cents": 10}, {"fee_id": "1a901a90-1a90-1a90-1a90-1a901a901a91", "amount_cents": 5}]})}) # CreditNoteEstimateInput | Credit note estimate payload
+}
+
+begin
+  # Estimate amounts for a new credit note
+  result = api_instance.estimate_credit_note(opts)
+  p result
+rescue LagoAPI::ApiError => e
+  puts "Error when calling CreditNotesApi->estimate_credit_note: #{e}"
+end
+```
+
+#### Using the estimate_credit_note_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreditNoteEstimated>, Integer, Hash)> estimate_credit_note_with_http_info(opts)
+
+```ruby
+begin
+  # Estimate amounts for a new credit note
+  data, status_code, headers = api_instance.estimate_credit_note_with_http_info(opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreditNoteEstimated>
+rescue LagoAPI::ApiError => e
+  puts "Error when calling CreditNotesApi->estimate_credit_note_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **credit_note_estimate_input** | [**CreditNoteEstimateInput**](CreditNoteEstimateInput.md) | Credit note estimate payload | [optional] |
+
+### Return type
+
+[**CreditNoteEstimated**](CreditNoteEstimated.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

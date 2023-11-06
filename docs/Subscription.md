@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **subscription** | [**SubscriptionObject**](SubscriptionObject.md) |  |  |
+| **subscription** | [**SubscriptionObjectExtended**](SubscriptionObjectExtended.md) |  |  |
 
 ## Example
 
