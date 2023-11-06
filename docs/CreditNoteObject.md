@@ -22,7 +22,7 @@
 | **balance_amount_cents** | **Integer** | The remaining credit note amount, expressed in cents. |  |
 | **credit_amount_cents** | **Integer** | The credited amount of the credit note, expressed in cents. |  |
 | **refund_amount_cents** | **Integer** | The refunded amount of the credit note, expressed in cents. |  |
-| **coupons_adjustement_amount_cents** | **Integer** | The pro-rated amount of the coupons applied to the source invoice. |  |
+| **coupons_adjustment_amount_cents** | **Integer** | The pro-rated amount of the coupons applied to the source invoice. |  |
 | **created_at** | **Time** | The date when the credit note was created. It is expressed in Coordinated Universal Time (UTC). |  |
 | **updated_at** | **Time** | The date when the credit note was last updated. It is expressed in Coordinated Universal Time (UTC). |  |
 | **file_url** | **String** | The PDF file of the credit note. | [optional] |
@@ -53,7 +53,7 @@ instance = LagoAPI::CreditNoteObject.new(
   balance_amount_cents: 100,
   credit_amount_cents: 100,
   refund_amount_cents: 0,
-  coupons_adjustement_amount_cents: 20,
+  coupons_adjustment_amount_cents: 20,
   created_at: 2022-09-14T16:35:31Z,
   updated_at: 2022-09-14T16:35:31Z,
   file_url: https://getlago.com/credit_note/file,
