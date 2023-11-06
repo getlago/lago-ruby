@@ -19,6 +19,7 @@
 | **taxes_amount_cents** | **Integer** | The cost of the tax associated with this specific fee. |  |
 | **taxes_rate** | **Float** | The tax rate associated with this specific fee. |  |
 | **units** | **String** | The number of units used to charge the customer. This field indicates the quantity or count of units consumed or utilized in the context of the charge. It helps in determining the basis for calculating the fee or cost associated with the usage of the service or product provided to the customer. |  |
+| **precise_unit_amount** | **String** | The unit amount of the fee per unit, with precision. |  |
 | **total_amount_cents** | **Integer** | The cost of this specific fee, including any applicable taxes. |  |
 | **total_amount_currency** | [**Currency**](Currency.md) |  |  |
 | **events_count** | **Integer** | The number of events that have been sent and used to charge the customer. This field indicates the count or quantity of events that have been processed and considered in the charging process. | [optional] |
@@ -56,6 +57,7 @@ instance = LagoAPI::CreditNoteItemObjectFee.new(
   taxes_amount_cents: 20,
   taxes_rate: 20,
   units: 0.32,
+  precise_unit_amount: 312.5,
   total_amount_cents: 120,
   total_amount_currency: null,
   events_count: 23,

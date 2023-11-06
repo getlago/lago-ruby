@@ -9,7 +9,7 @@
 | **description** | **String** | The description of the credit note. | [optional] |
 | **credit_amount_cents** | **Integer** | The total amount to be credited on the customer balance. | [optional] |
 | **refund_amount_cents** | **Integer** | The total amount to be refunded to the customer. | [optional] |
-| **items** | [**Array&lt;CreditNoteCreateInputCreditNoteItemsInner&gt;**](CreditNoteCreateInputCreditNoteItemsInner.md) | The list of credit note’s items. |  |
+| **items** | [**Array&lt;CreditNoteEstimateInputCreditNoteItemsInner&gt;**](CreditNoteEstimateInputCreditNoteItemsInner.md) | The list of credit note’s items. |  |
 
 ## Example
 
