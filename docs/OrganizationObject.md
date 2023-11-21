@@ -10,6 +10,7 @@
 | **webhook_url** | **String** | The URL of your newest updated webhook endpoint. This URL allows your organization to receive important messages, notifications, or data from the Lago system. By configuring your webhook endpoint to this URL, you can ensure that your organization stays informed and receives relevant information in a timely manner. | [optional] |
 | **webhook_urls** | **Array&lt;String&gt;** | The array containing your webhooks URLs. | [optional] |
 | **country** | [**Country**](Country.md) |  | [optional] |
+| **default_currency** | [**Currency**](Currency.md) |  | [optional] |
 | **address_line1** | **String** | The first line of your organization’s billing address. | [optional] |
 | **address_line2** | **String** | The second line of your organization’s billing address. | [optional] |
 | **state** | **String** | The state of your organization’s billing address. | [optional] |
@@ -36,6 +37,7 @@ instance = LagoAPI::OrganizationObject.new(
   webhook_url: https://webhook.brex.com,
   webhook_urls: [&quot;https://webhook.brex.com&quot;,&quot;https://webhook2.brex.com&quot;],
   country: null,
+  default_currency: null,
   address_line1: 100 Brex Street,
   address_line2: null,
   state: NYC,

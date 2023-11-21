@@ -11,6 +11,7 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 | [**find_all_customers**](CustomersApi.md#find_all_customers) | **GET** /customers | List all customers |
 | [**find_customer**](CustomersApi.md#find_customer) | **GET** /customers/{external_id} | Retrieve a customer |
 | [**find_customer_current_usage**](CustomersApi.md#find_customer_current_usage) | **GET** /customers/{external_customer_id}/current_usage | Retrieve customer current usage |
+| [**generate_customer_checkout_url**](CustomersApi.md#generate_customer_checkout_url) | **POST** /customers/{external_customer_id}/checkout_url | Generate a Customer Payment Provider Checkout URL |
 | [**get_customer_portal_url**](CustomersApi.md#get_customer_portal_url) | **GET** /customers/{external_customer_id}/portal_url | Get a customer portal URL |
 
 
@@ -506,6 +507,75 @@ end
 ### Return type
 
 [**CustomerUsage**](CustomerUsage.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## generate_customer_checkout_url
+
+> <GenerateCustomerCheckoutURL200Response> generate_customer_checkout_url(external_customer_id)
+
+Generate a Customer Payment Provider Checkout URL
+
+This endpoint regenerates the Payment Provider Checkout URL of a Customer.
+
+### Examples
+
+```ruby
+require 'time'
+require 'lago_ruby'
+# setup authorization
+LagoAPI.configure do |config|
+  # Configure Bearer authorization: bearerAuth
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = LagoAPI::CustomersApi.new
+external_customer_id = '5eb02857-a71e-4ea2-bcf9-57d3a41bc6ba' # String | The customer external unique identifier (provided by your own application).
+
+begin
+  # Generate a Customer Payment Provider Checkout URL
+  result = api_instance.generate_customer_checkout_url(external_customer_id)
+  p result
+rescue LagoAPI::ApiError => e
+  puts "Error when calling CustomersApi->generate_customer_checkout_url: #{e}"
+end
+```
+
+#### Using the generate_customer_checkout_url_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GenerateCustomerCheckoutURL200Response>, Integer, Hash)> generate_customer_checkout_url_with_http_info(external_customer_id)
+
+```ruby
+begin
+  # Generate a Customer Payment Provider Checkout URL
+  data, status_code, headers = api_instance.generate_customer_checkout_url_with_http_info(external_customer_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GenerateCustomerCheckoutURL200Response>
+rescue LagoAPI::ApiError => e
+  puts "Error when calling CustomersApi->generate_customer_checkout_url_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **external_customer_id** | **String** | The customer external unique identifier (provided by your own application). |  |
+
+### Return type
+
+[**GenerateCustomerCheckoutURL200Response**](GenerateCustomerCheckoutURL200Response.md)
 
 ### Authorization
 
