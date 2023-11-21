@@ -24,7 +24,7 @@ instance = LagoAPI::AddOnCreateInputAddOn.new(
   amount_cents: 50000,
   amount_currency: null,
   description: Implementation fee for new customers.,
-  tax_codes: [&quot;french_standard_vat&quot;]
+  tax_codes: [french_standard_vat]
 )
 ```
 

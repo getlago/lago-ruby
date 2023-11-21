@@ -8,4 +8,4 @@ script:
   - bundle install --path vendor/bundle
   - bundle exec rspec
   - gem build lago_ruby.gemspec
-  - gem install ./lago_ruby-0.51.0-beta.gem
+  - gem install ./lago_ruby-v0.52.0-beta.gem
